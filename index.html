@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Criador de Mapas</title>
+    <link rel="stylesheet" href="estilo.css">
+    <meta charset="utf-8"/>
+
+    
+  </head>
+<body>
+<div id="tudo">
+
+  <div class="topnav">
+    
+    <a class="active" href="#"><img id="logo" src="img/logo-dungeon.png" class="rounded" width="160px" alt=""></a>
+    <a href="#">
+      <span id="addItemDungeon">
+      <select id="addelement">
+      
+        <option value="-1">Selecionar...</option>
+        <optgroup label="Cenário">
+          <option value="room-corridorh">Corredor Hor.</option>
+          <option value="room-corridorv">Corredor Vert.</option>
+          <option value="room-smallRoom">Sala pequena</option>
+          <option value="room-bigRoom">Sala Grande</option>
+          <option value="squareShapeMedium-stairs">Escadaria</option>
+          <option value="itemMediumPortrait-torch">Tocha</option>
+          <option value="itemMediumPortrait-trhone">Trono</option>
+          <option value="squareShapeMedium-blood">Sangue</option>
+          <option value="squareShapeMedium-bones">Ossos</option>
+        </optgroup>
+        <optgroup label="Criaturas">
+          <option value="creature-knight">Cavaleiro</option>
+          <option value="creature-goblin">Goblin</option>
+          <option value="creature-wolf">Lobo</option>
+          <option value="creature-spider">Aranha</option>
+          <option value="creature-archer">Arqueiro</option>
+          <option value="creature-thief">Ladrão</option>
+          <option value="creature-barbarian">Bárbaro</option>
+          <option value="creature-skeleton">Esqueleto</option>
+          <option value="creature-rogue">Guerreiro</option>
+          <option value="creature-orc">Orc</option>
+          <option value="creature-ogre">Ogro</option>
+          <option value="creature-dragon">Dragão</option>
+        </optgroup>
+        <optgroup label="Itens">
+          <option value="itemSmall-chest">Baú</option>
+          <option value="itemSmall-key">Chave</option>
+          <option value="itemSmall-fire">Fogueira</option>
+          <option value="itemMediumPortrait-dooropen">Porta aberta</option>
+          <option value="itemMediumPortrait-doorclosed">Porta fechada</option>
+          
+        </optgroup>
+      </select>
+      <!-- <button onclick=addElement()>Adicionar</button> -->
+      <img title="Adicionar elemento selecionado" src="img/icons/add.png" onclick=addElement() height="20px" style="vertical-align:middle; padding-left: 10px">
+    </span>
+    <span id="addItemMap">
+      <select id="addTiles">
+        <option value="-1">Selecionar...</option>
+        <optgroup label="Terreno">
+          <option value="terrain-plane">Planície</option>
+          <option value="terrain-forest">Floresta</option>
+          <option value="terrain-pant">Pântano</option>
+          <option value="terrain-mountain">Montanha</option>
+          <option value="terrain-water">Água</option>
+          <option value="terrain-desert">Desert</option>
+          <option value="terrain-ice">Gelo</option>
+        </optgroup>
+        <optgroup label="Token jogador">
+          <option value="player-player1">Jogador 1</option>
+          <option value="player-player2">Jogador 2</option>
+          <option value="player-player3">Jogador 3</option>
+          <option value="player-player4">Jogador 4</option>
+        </optgroup>
+        <optgroup label="Locais">
+          <option value="squareShapeBig-dungeon_entrance">Entrada de dungeon</option>
+          <option value="squareShapeBig-city1">Cidade 1</option>
+          <option value="squareShapeBig-city2">Cidade 2</option>
+          <option value="squareShapeBig-city3">Cidade 3</option>
+          <option value="squareShapeBig-city4">Cidade 4</option>
+          <option value="squareShapeBig-fort">Forte</option>
+          <option value="squareShapeBig-portal">Portal</option>
+          <option value="squareShapeBig-oasis">Oasis</option>
+          <option value="squareShapeBig-ruins">Ruínas</option>
+          <option value="squareShapeBig-tower1">Torre 1</option>
+          <option value="squareShapeBig-tower2">Torre 2</option>
+          <option value="squareShapeBig-rocks">Pedras</option>
+          <option value="squareShapeBig-ship">Navio naufragado</option>
+        </optgroup>
+      </select>
+      <!-- <button onclick=addElement()>Adicionar</button> -->
+      <img title="Adicionar elemento selecionado" src="img/icons/add.png" onclick=addElement() height="20px" style="vertical-align:middle; padding-left: 10px">
+    </span>
+    </a>
+    <a href="#">
+      <span id="deleteDgElement">
+      <select id="deleteelement">
+        <option value="-1">Selecionar...</option>
+      </select>
+      <!-- <button onclick=deleteMapElement()>Excluir</button> -->
+      <img title="Excluir elemento selecionado" src="img/icons/remove.png" onclick=deleteMapElement() height="20px" style="vertical-align:middle; padding-left: 10px">
+    
+  </span>
+  <span id="deleteItemMap">
+    <select id="deleteTiles">
+      <option value="-1">Selecionar...</option>
+    </select>
+    <!-- <button onclick=deleteMapElement()>Excluir</button> -->
+    <img title="Excluir elemento selecionado" src="img/icons/remove.png" onclick=deleteMapElement() height="20px" style="vertical-align:middle; padding-left: 10px">
+  </span>
+</a>
+    <a href="#">
+      <input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
+      <img title="Adicionar texto" src="img/icons/add.png" id="addText" onclick="addElement(true)" height="20px" style="vertical-align:middle; padding-left: 10px">
+      <img id="btnUpload" src="img/icons/upload.png" title="Upload de imagem" height="20px" style="vertical-align:middle; padding-left: 10px"> 
+      <img src="img/icons/new.png" title="Novo mapa" height="20px" style="vertical-align:middle; padding-left: 10px;" id="newMap" onclick="redirect('index')">
+      <img src="img/icons/new.png" title="Novo mapa" height="20px" style="vertical-align:middle; padding-left: 10px" id="newDung" onclick="redirect('index',false,true)">
+      <img id="modalBtn" title="Alternar de editor" height="20px" style="vertical-align:middle; padding-left: 10px">
+      <!-- <button id="modalBtn"></button> -->
+      <img src="img/icons/options.png" title="Opções" id="myBtn" height="25px" style="vertical-align:middle; padding-left: 10px">
+
+      
+    </a>
+  </div>
+
+    <div id="topo">
+
+        <div id="opcoes">
+          
+          
+      
+      </div>
+    </div>
+
+    
+    <div id="confirmChange" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+       <h3>Atenção!</h3>
+        <h5> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido salvo!</h5>
+        <h5>Prosseguir?</h5>
+      <button class="nao_class" >Não</button>
+      <button id="toWorldGen" onclick="redirect('index')">Sim</button>
+      <button id="toDundGen" onclick="redirect('index',false,true)">Sim</button>
+      
+
+        </div>
+    </div>
+
+    <div id="uploadImageModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span id="closeUp" class="closeUp">&times;</span>
+        <h5>
+          Escolha o tipo de elemento que deseja adicionar e depois a imagem.
+        </h5>
+        <p>Para saber como preparar boas imagens para seu mapa clique <a href="#">aqui</a></p>
+        <p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
+        <select name="chooseClass" id="chooseClass">
+          <option id="chooseClass" value="-1">Selecionar...</option>
+          <option value="upCreature">Criatura</option>
+          <option value="upSmallItem">Item pequeno</option>
+          <option value="upMediumItem">Item médio</option>
+          <option value="upSmallRoom">Sala pequena</option>
+          <option value="upBigRoom">Sala grande</option>
+          <option value="upVertCorridor">Corredor vertical</option>
+          <option value="upHorCorridor">Corredor horizontal</option>
+        </select>
+        <select id="chooseClassMap" name="chooseClassMap">
+          <option value="-1">Selecionar...</option>
+          <option value="terrain">Terreno</option>
+          <option value="squareShapeBig">Local</option>
+        </select>
+        <input type="file" id="myfile" name="myfile" />
+      </div>
+    </div>
+  
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input type="text" placeholder="Nome do mapa" id="nomeMapa">
+        <button onclick=saveMap()
+        title="Salva no seu navegador para continuar a jogar depois"
+        >Salvar mapa </button>
+        
+        
+        <button onclick=salvarPosicao()
+        title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador"
+        >Exportar</button>
+        
+        <br><br>
+        <select name="selectmap" id="selectmap">
+          <option value="-1">Nenhum</option>
+        </select>
+        <button onclick=loadMap()
+        title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado"
+        >Carregar mapa</button>
+        <button onclick=deleteMap()
+        title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado"
+        >Excluir mapa</button>
+        <br><br>
+        <input type="file" id="file-input"
+        title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
+        <label><button id="read-button" onclick=readMapFile()
+          title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado"
+          >Importar mapa</label></button>
+        <span>
+          <br><br>
+        <p>Para saber o que cada botão faz posicione o mouse sobre o mesmo</p>
+        <p>Para dar sugestões clique <a href="https://forms.gle/3RiyBDhxwKSjqFsQ7" target="new">aqui</a></p>
+        <p>Para vídeos de como usar a ferramenta clique <a href="https://www.youtube.com/channel/UCQOr-yKxMMXAZa7hWXjw1NA/videos" target="new">aqui</a></p>
+    </div>
+
+  </div>
+
+      </div>
+    </div>
+  <div id="conteudo">
+
+
+  <div id="d6" class="diceRoller dice1" onclick=rolld6()></div>
+  <div id="selectorBg" class="bgSelector bgStyle1" onclick="changeBg()"></div>
+  <!-- <div class="bgSelector bgSelector2 bgStyle2" onclick="changeBg(2)"></div>
+  <div class="bgSelector bgSelector3 bgStyle3" onclick="changeBg(3)"></div>
+  <div class="bgSelector bgSelector4 bgStyle4" onclick="changeBg(4)"></div> -->
+
+
+  <div id="corpo">
+    
+  </div>
+ 
+  <script src="functions.js"></script>
+</div>
+</body>
+</html>
