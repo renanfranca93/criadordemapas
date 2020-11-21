@@ -1,710 +1,782 @@
 .invisible {
-  display: none;
+    display: none;
 }
 
 p {
-  font-size: 70%;
+    font-size: 70%;
 }
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 button {
-  font-size: 70%;
-  padding: 0.5em 1em;
-  color: rgba(0, 0, 0, 0.8);
-  border: transparent;
-  background-color: #e6e6e6;
-  text-decoration: none;
-  border-radius: 2px;
+    font-size: 70%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.8);
+    border: transparent;
+    background-color: #e6e6e6;
+    text-decoration: none;
+    border-radius: 2px;
 }
 
 button:hover {
-  background-image: linear-gradient(
-    transparent,
-    rgba(0, 0, 0, 0.05) 40%,
-    rgba(0, 0, 0, 0.1)
-  );
+    background-image: linear-gradient( transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
 }
 
 select {
-  height: 2em;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  border-radius: 2px;
+    height: 2em;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 2px;
 }
 
 input {
-  height: 2em;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  border-radius: 2px;
+    height: 2em;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 2px;
 }
 
 .bgStyle1 {
-  background-color: #f0f0f0;
-  background-repeat: repeat;
+    background-color: #f0f0f0;
+    background-repeat: repeat;
 }
 
 .bgStyle2 {
-  background-image: url("img/bg/sq3.png");
-  background-repeat: repeat;
+    background-image: url("img/bg/sq3.png");
+    background-repeat: repeat;
 }
 
 .bgStyle3 {
-  background-image: url("img/bg/wood3.jpg");
-  background-repeat: repeat;
+    background-image: url("img/bg/wood3.jpg");
+    background-repeat: repeat;
 }
 
 .bgStyle4 {
-  background-image: url("img/bg/paper2.jpg");
-  background-repeat: repeat;
+    background-image: url("img/bg/paper2.jpg");
+    background-repeat: repeat;
 }
 
 .bgStyle5 {
-  background-image: url("img/bg/dark.jpg");
-  background-repeat: repeat;
+    background-image: url("img/bg/dark.jpg");
+    background-repeat: repeat;
 }
 
 .rounded {
-  border-radius: 4px;
+    border-radius: 4px;
 }
 
 #first {
-  float: left;
-  width: 50%;
+    float: left;
+    width: 50%;
 }
 
 #second {
-  float: left;
-  width: 50%;
+    float: left;
+    width: 50%;
 }
 
 #conteudo {
-  float: left;
-  width: 100%;
+    float: left;
+    width: 100%;
 }
 
 .room {
-  z-index: 1;
+    z-index: 1;
 }
+
 .smallRoom {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 150px;
-  background-image: url("img/tiles/scenario/floor.jpg");
-  background-size: 6mm;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    background-image: url("img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .corridorh {
-  width: 150px;
-  height: 30px;
-  position: absolute;
-  top: 150px;
-  background-image: url("img/tiles/scenario/floor.jpg");
-  background-size: 6mm;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    top: 150px;
+    background-image: url("img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
+
 .corridorv {
-  width: 30px;
-  height: 150px;
-  position: absolute;
-  top: 150px;
-  background-image: url("img/tiles/scenario/floor.jpg");
-  background-size: 6mm;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 30px;
+    height: 150px;
+    position: absolute;
+    top: 150px;
+    background-image: url("img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .bigRoom {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 150px;
-  background-image: url("img/tiles/scenario/floor.jpg");
-  background-size: 6mm;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 150px;
+    background-image: url("img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .itemSmall {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .itemMediumPortrait {
-  width: 20px;
-  height: 40px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .squareShapeMedium {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .squareShapeBig {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .textdiv {
-  background-color: #f0f0f0;
-  opacity: 0.5;
-  height: 20px;
-  line-height: 20px;
-  width: 100px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  cursor: pointer;
-  border: 1px solid #000;
-  font-size: 70%;
-  font-weight: bold;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+    background-color: #f0f0f0;
+    opacity: 0.5;
+    height: 20px;
+    line-height: 20px;
+    width: 100px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    cursor: pointer;
+    border: 1px solid #000;
+    font-size: 70%;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .player {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .creature {
-  width: 30px;
-  height: 40px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  border: 0px;
-  cursor: move;
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
 }
 
 .bgSelector {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  z-index: 9;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  border: 1px solid #000;
+    width: 30px;
+    height: 30px;
+    z-index: 9;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    border: 1px solid #000;
 }
 
 .diceRoller {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  z-index: 9;
-  top: 10px;
-  right: 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  border: 0px;
+    width: 30px;
+    height: 30px;
+    /* position: absolute; */
+    z-index: 9;
+    /* top: 10px; */
+    /* right: 50px; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 0px;
 }
 
 @keyframes example {
-  0% {
-    width: 30px;
-    height: 30px;
-  }
-  50% {
-    width: 40px;
-    height: 40px;
-  }
-  100% {
-    width: 30px;
-    height: 30px;
-  }
+    0% {
+        width: 30px;
+        height: 30px;
+    }
+    50% {
+        width: 40px;
+        height: 40px;
+    }
+    100% {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .player1 {
-  background-image: url("img/icons/player1.png");
+    background-image: url("img/icons/player1.png");
 }
+
 .player2 {
-  background-image: url("img/icons/player2.png");
+    background-image: url("img/icons/player2.png");
 }
+
 .player3 {
-  background-image: url("img/icons/player3.png");
+    background-image: url("img/icons/player3.png");
 }
+
 .player4 {
-  background-image: url("img/icons/player4.png");
+    background-image: url("img/icons/player4.png");
 }
 
 .diceWhat {
-  background-image: url("img/dice/what.png");
+    background-image: url("img/dice/what.png");
 }
 
 .dice1 {
-  background-image: url("img/dice/b1.png");
+    background-image: url("img/dice/b1.png");
 }
 
 .dice2 {
-  background-image: url("img/dice/b2.png");
+    background-image: url("img/dice/b2.png");
 }
+
 .dice3 {
-  background-image: url("img/dice/b3.png");
+    background-image: url("img/dice/b3.png");
 }
 
 .dice4 {
-  background-image: url("img/dice/b4.png");
+    background-image: url("img/dice/b4.png");
 }
 
 .dice5 {
-  background-image: url("img/dice/b5.png");
-}
-.dice6 {
-  background-image: url("img/dice/b6.png");
+    background-image: url("img/dice/b5.png");
 }
 
+.dice6 {
+    background-image: url("img/dice/b6.png");
+}
+
+
 /* backgroud dos itens */
+
 .goblin {
-  background-image: url("img/tiles/creatures/goblin.png");
-  width: 25px;
-  height: 35px;
+    background-image: url("img/tiles/creatures/goblin.png");
+    width: 25px;
+    height: 35px;
 }
 
 .knight {
-  background-image: url("img/tiles/creatures/knight.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/knight.png");
+    width: 35px;
+    height: 45px;
 }
 
 .chest {
-  background-image: url("img/tiles/itens/chest.png");
+    background-image: url("img/tiles/itens/chest.png");
 }
 
 .key {
-  background-image: url("img/tiles/markers/key.png");
+    background-image: url("img/tiles/markers/key.png");
 }
 
 .fire {
-  background-image: url("img/tiles/itens/fire.png");
+    background-image: url("img/tiles/itens/fire.png");
 }
 
 .wolf {
-  background-image: url("img/tiles/creatures/wolf.png");
-  width: 35px;
-  height: 35px;
+    background-image: url("img/tiles/creatures/wolf.png");
+    width: 35px;
+    height: 35px;
 }
 
 .spider {
-  background-image: url("img/tiles/creatures/spider.png");
-  width: 35px;
-  height: 35px;
+    background-image: url("img/tiles/creatures/spider.png");
+    width: 35px;
+    height: 35px;
 }
 
 .soldier {
-  background-image: url("img/tiles/creatures/soldier.png");
-  width: 45px;
+    background-image: url("img/tiles/creatures/soldier.png");
+    width: 45px;
 }
 
 .archer {
-  background-image: url("img/tiles/creatures/archer.png");
-  width: 35px;
-  height: 55px;
+    background-image: url("img/tiles/creatures/archer.png");
+    width: 35px;
+    height: 55px;
 }
 
 .skeleton {
-  background-image: url("img/tiles/creatures/skeleton.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/skeleton.png");
+    width: 35px;
+    height: 45px;
 }
 
 .thief {
-  background-image: url("img/tiles/creatures/thief.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/thief.png");
+    width: 35px;
+    height: 45px;
 }
+
 .ogre {
-  background-image: url("img/tiles/creatures/ogre.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/ogre.png");
+    width: 35px;
+    height: 45px;
 }
 
 .orc {
-  background-image: url("img/tiles/creatures/orc.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/orc.png");
+    width: 35px;
+    height: 45px;
 }
 
 .giant {
-  background-image: url("img/tiles/creatures/giant.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/giant.png");
+    width: 35px;
+    height: 45px;
 }
 
 .dragon {
-  background-image: url("img/tiles/creatures/dragon.png");
-  width: 45px;
+    background-image: url("img/tiles/creatures/dragon.png");
+    width: 45px;
 }
 
 .barbarian {
-  background-image: url("img/tiles/creatures/barbarian.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/barbarian.png");
+    width: 35px;
+    height: 45px;
 }
 
 .rogue {
-  background-image: url("img/tiles/creatures/rogue.png");
-  width: 35px;
-  height: 45px;
+    background-image: url("img/tiles/creatures/rogue.png");
+    width: 35px;
+    height: 45px;
 }
 
 .doorclosed {
-  background-image: url("img/tiles/itens/closeddoor.png");
-  width: 60px;
+    background-image: url("img/tiles/itens/closeddoor.png");
+    width: 60px;
 }
 
 .dooropen {
-  background-image: url("img/tiles/itens/opendoor.png");
+    background-image: url("img/tiles/itens/opendoor.png");
 }
 
 .torch {
-  background-image: url("img/tiles/scenario/torch.png");
+    background-image: url("img/tiles/scenario/torch.png");
 }
 
 .trhone {
-  background-image: url("img/tiles/scenario/throne.png");
-  width: 35px;
+    background-image: url("img/tiles/scenario/throne.png");
+    width: 35px;
 }
 
 .blood {
-  background-image: url("img/tiles/scenario/blood.png");
+    background-image: url("img/tiles/scenario/blood.png");
 }
 
 .bones {
-  background-image: url("img/tiles/scenario/bones.png");
-}
-.stairs {
-  background-image: url("img/tiles/scenario/stairs.png");
-}
-/* COLAPSE ESTILO */
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 10; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-image: url("img/tiles/scenario/bones.png");
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+.stairs {
+    background-image: url("img/tiles/scenario/stairs.png");
 }
+
+
+/* COLAPSE ESTILO */
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 10;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+}
+
 
 /* The Close Button */
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .closeUp {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .closeUp:hover,
 .closeUp:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .cardDeck {
-  position: absolute;
-  width: 150px;
-  height: 200px;
-  min-width: 100px;
-  min-height: 200px;
-  cursor: move;
-  background-color: aqua;
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    min-width: 100px;
+    min-height: 200px;
+    cursor: move;
+    background-color: aqua;
 }
+
 
 /* fazer o dado tremer */
 
 .shake {
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 @keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
-  }
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
+
 
 /* opcoes do menu */
 
+
 /* Add a black background color to the top navigation */
+
 .topnav {
-  /* background-color: #333; */
-  overflow: hidden;
+    /* background-color: #333; */
+    overflow: hidden;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
 }
+
 
 /* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  /* color: #f2f2f2; */
-  text-align: center;
-  padding: 2px 16px;
-  text-decoration: none;
-  font-size: 17px;
+
+.topnav div {
+    display: flex;
+    float: left;
+    /* color: #f2f2f2; */
+    text-align: center;
+    padding: 2px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    align-items: center;
 }
 
+.topnav img {
+    cursor: pointer
+}
+
+
 /* Change the color of links on hover */
+
+
 /* .topnav a:hover {
   background-color: #ddd;
   color: black;
 } */
 
+
 /* Add a color to the active/current link */
+
+
 /* .topnav a.active {
   background-color: #4caf50;
   color: white;
 } */
 
+
 /* gerador de mundos */
 
 .terrain {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  top: 150px;
-  background-size: 6mm;
-  text-align: center;
-  border: 0px;
-  cursor: move;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 150px;
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .plane {
-  background-image: url("img/world/planicie.png");
+    background-image: url("img/world/planicie.png");
 }
+
 .ice {
-  background-image: url("img/world/ice.png");
+    background-image: url("img/world/ice.png");
 }
+
 .forest {
-  background-image: url("img/world/floresta.png");
+    background-image: url("img/world/floresta.png");
 }
+
 .mountain {
-  background-image: url("img/world/montanha.png");
+    background-image: url("img/world/montanha.png");
 }
+
 .pant {
-  background-image: url("img/world/pantano.png");
+    background-image: url("img/world/pantano.png");
 }
+
 .water {
-  background-image: url("img/world/agua.png");
+    background-image: url("img/world/agua.png");
 }
+
 .desert {
-  background-image: url("img/world/deserto.png");
+    background-image: url("img/world/deserto.png");
 }
+
+
 /* places of the world */
 
 .city1 {
-  background-image: url("img/world/places/city1.png");
+    background-image: url("img/world/places/city1.png");
 }
+
 .city2 {
-  background-image: url("img/world/places/city2.png");
+    background-image: url("img/world/places/city2.png");
 }
+
 .city3 {
-  background-image: url("img/world/places/city3.png");
+    background-image: url("img/world/places/city3.png");
 }
+
 .city4 {
-  background-image: url("img/world/places/city4.png");
+    background-image: url("img/world/places/city4.png");
 }
+
 .dungeon_entrance {
-  background-image: url("img/world/places/dungeon_entrance.png");
+    background-image: url("img/world/places/dungeon_entrance.png");
 }
+
 .fort {
-  background-image: url("img/world/places/fort1.png");
+    background-image: url("img/world/places/fort1.png");
 }
+
 .portal {
-  background-image: url("img/world/places/portal.png");
+    background-image: url("img/world/places/portal.png");
 }
+
 .oasis {
-  background-image: url("img/world/places/oasis.png");
+    background-image: url("img/world/places/oasis.png");
 }
+
 .rocks {
-  background-image: url("img/world/places/rocks.png");
+    background-image: url("img/world/places/rocks.png");
 }
+
 .ruins {
-  background-image: url("img/world/places/ruins.png");
+    background-image: url("img/world/places/ruins.png");
 }
+
 .ship {
-  background-image: url("img/world/places/ship.png");
+    background-image: url("img/world/places/ship.png");
 }
+
 .tower1 {
-  background-image: url("img/world/places/tower1.png");
+    background-image: url("img/world/places/tower1.png");
 }
 
 .tower2 {
-  background-image: url("img/world/places/tower2.png");
+    background-image: url("img/world/places/tower2.png");
 }
 
+
 /* estilo dos itens de upload */
+
 .upCreature {
-  width: 35px;
-  height: 45px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  border: 0px;
-  cursor: move;
+    width: 35px;
+    height: 45px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    border: 0px;
+    cursor: move;
 }
+
 .upSmallItem {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  border: 0px;
-  cursor: move;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    border: 0px;
+    cursor: move;
 }
+
 .upMediumItem {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  z-index: 9;
-  top: 150px;
-  border: 0px;
-  cursor: move;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    border: 0px;
+    cursor: move;
 }
+
 .upSmallRoom {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  z-index: 1;
-  top: 150px;
-  border: 0px;
-  cursor: move;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
 }
+
 .upBigRoom {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  z-index: 1;
-  top: 150px;
-  border: 0px;
-  cursor: move;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
 }
+
 .upVertCorridor {
-  width: 30px;
-  height: 150px;
-  position: absolute;
-  z-index: 1;
-  top: 150px;
-  border: 0px;
-  cursor: move;
+    width: 30px;
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
 }
+
 .upHorCorridor {
-  width: 150px;
-  height: 30px;
-  position: absolute;
-  z-index: 1;
-  top: 150px;
-  border: 0px;
-  cursor: move;
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
 }
