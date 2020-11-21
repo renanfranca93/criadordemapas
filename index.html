@@ -14,16 +14,16 @@
 
         <div class="topnav">
 
-            <div class="active">
+            <div>
                 <img id="logo" src="img/logo-dungeon.png" class="rounded" width="160px" alt="">
             </div>
-            <div>
+            <div id="topnav-add-item">
                 <span id="addItemDungeon">
 					<select id="addelement">
 
 						<option value="-1">Selecionar...</option>
 						<optgroup label="Cenário">
-							<option value="room-corridorh">Corredor Hor.</option>
+							<option value="room-corridorh"> Corredor Hor.</option>
 							<option value="room-corridorv">Corredor Vert.</option>
 							<option value="room-smallRoom">Sala pequena</option>
 							<option value="room-bigRoom">Sala Grande</option>
@@ -57,8 +57,8 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/add.png" onclick=addElement()
-						height="20px" style="vertical-align:middle; padding-left: 10px">
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
+						height="20px" >
 				</span>
                 <span id="addItemMap">
 					<select id="addTiles">
@@ -95,18 +95,18 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/add.png" onclick=addElement()
-						height="20px" style="vertical-align:middle; padding-left: 10px">
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
+						height="20px" >
 				</span>
             </div>
-            <div>
+            <div id="topnav-delete-item">
                 <span id="deleteDgElement">
 					<select id="deleteelement">
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/remove.png" onclick=deleteMapElement()
-						height="20px" style="vertical-align:middle; padding-left: 10px">
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
+						height="20px" >
 
 				</span>
                 <span id="deleteItemMap">
@@ -114,26 +114,28 @@
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/remove.png" onclick=deleteMapElement()
-						height="20px" style="vertical-align:middle; padding-left: 10px">
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
+						height="20px" >
 				</span>
             </div>
-            <div>
+            <div id="topnav-add-text">
                 <input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
-                <img title="Adicionar texto" src="img/icons/add.png" id="addText" onclick="addElement(true)" height="20px" style="vertical-align:middle; padding-left: 10px">
+                <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" height="20px">
             </div>
-            <div>
-                <img id="btnUpload" src="img/icons/upload.png" title="Upload de imagem" height="20px" style="vertical-align:middle; padding-left: 10px">
-                <img src="img/icons/new.png" title="Novo mapa" height="20px" style="vertical-align:middle; padding-left: 10px;" id="newMap" onclick="redirect('index')">
-                <img src="img/icons/new.png" title="Novo mapa" height="20px" style="vertical-align:middle; padding-left: 10px" id="newDung" onclick="redirect('index',false,true)">
-                <img id="modalBtn" title="Alternar de editor" height="20px" style="vertical-align:middle; padding-left: 10px">
+            <div class="topbar-options">
+                <img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" height="20px">
+                <img src="img/icons/new/map-plus.png" title="Novo mapa" height="20px" id="newMap" onclick="redirect('index')">
+                <img src="img/icons/new/map-plus.png" title="Novo mapa" height="20px" id="newDung" onclick="redirect('index',false,true)">
+                <img id="modalBtn" title="Alternar de editor" height="20px">
                 <!-- <button id="modalBtn"></button> -->
-                <img src="img/icons/options.png" title="Opções" id="myBtn" height="25px" style="vertical-align:middle; padding-left: 10px">
+                <img src="img/icons/new/cog.png" title="Opções" id="myBtn" height="25px">
 
 
             </div>
-            <div id="d6" class="diceRoller dice1" onclick=rolld6()></div>
-            <div id="selectorBg" class="bgSelector bgStyle1" onclick="changeBg()"></div>
+            <div id="topnav-options-end">
+                <div id="d6" class="diceRoller dice1" onclick=rolld6()></div>
+                <div id="selectorBg" class="bgSelector bgStyle1" onclick="changeBg()"></div>
+            </div>
         </div>
 
         <div id="topo">

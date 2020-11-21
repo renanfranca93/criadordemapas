@@ -565,7 +565,7 @@ input {
 /* Add a black background color to the top navigation */
 
 .topnav {
-    /* background-color: #333; */
+    background-color: #6b5a55;
     overflow: hidden;
     padding: 0.5rem;
     display: flex;
@@ -588,6 +588,32 @@ input {
 
 .topnav img {
     cursor: pointer
+}
+
+.topbar-options img {
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
+.topbar-options img:hover,
+#topnav-add-item img:hover,
+#topnav-delete-item img:hover,
+#topnav-add-text img:hover {
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+#topnav-add-item img,
+#topnav-delete-item img,
+#topnav-add-text img {
+    height: 2rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+#topnav-options-end {
+    flex: 1;
+    justify-content: flex-end;
 }
 
 
