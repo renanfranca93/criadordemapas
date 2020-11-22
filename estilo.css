@@ -238,11 +238,13 @@ input {
 }
 
 .bgSelector {
-    width: 30px;
-    height: 30px;
+    padding: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0 !important;
+    margin-left: 0.5rem;
+    border-radius: 9px;
     z-index: 9;
-    top: 10px;
-    right: 20px;
     cursor: pointer;
     border: 1px solid #000;
 }
