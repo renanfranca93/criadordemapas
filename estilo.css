@@ -483,13 +483,32 @@ input {
 /* Modal Content/Box */
 
 .modal-content {
-    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    background-color: #6b5a55;
+    color: white;
     margin: 15% auto;
     /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
     /* Could be more or less, depending on screen size */
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.modal-title {
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 700;
 }
 
 
@@ -500,6 +519,9 @@ input {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .close:hover,
@@ -629,9 +651,12 @@ input {
     color: white;
 }
 
+.topnav select {
+    width: 70%;
+}
+
 #topnav-add-text {
     flex-direction: column;
-    padding: 0;
     align-items: end;
 }
 
