@@ -7,7 +7,8 @@ p {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     margin: 0;
 }
 
@@ -618,6 +619,24 @@ input {
 #topnav-options-end {
     flex: 1;
     justify-content: flex-end;
+}
+
+.topnav span {
+    text-align: left;
+}
+
+.topnav label {
+    color: white;
+}
+
+#topnav-add-text {
+    flex-direction: column;
+    padding: 0;
+    align-items: end;
+}
+
+#topnav-add-text div {
+    padding: 0;
 }
 
 

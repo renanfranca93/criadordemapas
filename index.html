@@ -5,6 +5,8 @@
     <title>Criador de Mapas</title>
     <link rel="stylesheet" href="estilo.css">
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 
 </head>
@@ -18,7 +20,9 @@
                 <img id="logo" src="img/logo-dungeon.png" class="rounded" width="160px" alt="">
             </div>
             <div id="topnav-add-item">
+
                 <span id="addItemDungeon">
+					<label for="addelement">Adicione Itens:</label>
 					<select id="addelement">
 
 						<option value="-1">Selecionar...</option>
@@ -61,7 +65,9 @@
 						height="20px" >
 				</span>
                 <span id="addItemMap">
+					<label for="addTiles">Adicione Itens:</label>
 					<select id="addTiles">
+						
 						<option value="-1">Selecionar...</option>
 						<optgroup label="Terreno">
 							<option value="terrain-plane">Planície</option>
@@ -101,6 +107,7 @@
             </div>
             <div id="topnav-delete-item">
                 <span id="deleteDgElement">
+					<label for="deleteelement">Excluir itens:</label>
 					<select id="deleteelement">
 						<option value="-1">Selecionar...</option>
 					</select>
@@ -110,6 +117,7 @@
 
 				</span>
                 <span id="deleteItemMap">
+					<label for="deleteTiles">Excluir itens:</label>
 					<select id="deleteTiles">
 						<option value="-1">Selecionar...</option>
 					</select>
@@ -119,8 +127,11 @@
 				</span>
             </div>
             <div id="topnav-add-text">
-                <input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
-                <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" height="20px">
+                <label for="addTextInput">Adicione Texto:</label>
+                <div>
+                    <input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
+                    <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" height="20px">
+                </div>
             </div>
             <div class="topbar-options">
                 <img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" height="20px">
