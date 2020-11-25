@@ -508,7 +508,8 @@ input {
 .modal-title {
     font-size: 1.3rem;
     margin: 0;
-    font-weight: 700;
+    font-weight: normal;
+    margin-left: 0.5rem;
 }
 
 .modal-footer {
@@ -521,14 +522,20 @@ input {
     margin-right: 1rem;
 }
 
+.modal-header img {
+    height: 3rem;
+}
+
+.modal-header div {
+    display: flex;
+    align-items: flex-end;
+}
+
 
 /* The Close Button */
 
 .close {
-    color: #aaa;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
     display: flex;
     justify-content: flex-end;
 }
@@ -541,10 +548,8 @@ input {
 }
 
 .closeUp {
-    color: #aaa;
+    height: 3rem;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
 }
 
 .closeUp:hover,
