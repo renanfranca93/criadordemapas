@@ -486,7 +486,7 @@ input {
     display: flex;
     flex-direction: column;
     background-color: #6b5a55;
-    color: white;
+    color: #FAE1B3;
     margin: 15% auto;
     /* 15% from the top and centered */
     padding: 20px;
@@ -511,6 +511,16 @@ input {
     font-weight: 700;
 }
 
+.modal-footer {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nao_class {
+    margin-right: 1rem;
+}
+
 
 /* The Close Button */
 
@@ -520,7 +530,6 @@ input {
     font-size: 28px;
     font-weight: bold;
     display: flex;
-    flex: 1;
     justify-content: flex-end;
 }
 
@@ -648,7 +657,7 @@ input {
 }
 
 .topnav label {
-    color: white;
+    color: #FAE1B3;
 }
 
 .topnav select {

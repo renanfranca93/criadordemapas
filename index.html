@@ -163,14 +163,20 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>Atenção!</h3>
-                <h5> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido salvo!
-                </h5>
-                <h5>Prosseguir?</h5>
-                <button class="nao_class">Não</button>
-                <button id="toWorldGen" onclick="redirect('index')">Sim</button>
-                <button id="toDundGen" onclick="redirect('index',false,true)">Sim</button>
+                <div class="modal-header">
+                    <p class="modal-title">Atenção!</p>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <h4> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido salvo!
+                    </h4>
+                    <h4>Prosseguir?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button class="nao_class">Não</button>
+                    <button id="toWorldGen" onclick="redirect('index')">Sim</button>
+                    <button id="toDundGen" onclick="redirect('index',false,true)">Sim</button>
+                </div>
 
 
             </div>
@@ -179,28 +185,33 @@
         <div id="uploadImageModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
-                <span id="closeUp" class="closeUp">&times;</span>
-                <h5>
-                    Escolha o tipo de elemento que deseja adicionar e depois a imagem.
-                </h5>
-                <p>Para saber como preparar boas imagens para seu mapa clique <a href="#">aqui</a></p>
-                <p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
-                <select name="chooseClass" id="chooseClass">
-					<option id="chooseClass" value="-1">Selecionar...</option>
-					<option value="upCreature">Criatura</option>
-					<option value="upSmallItem">Item pequeno</option>
-					<option value="upMediumItem">Item médio</option>
-					<option value="upSmallRoom">Sala pequena</option>
-					<option value="upBigRoom">Sala grande</option>
-					<option value="upVertCorridor">Corredor vertical</option>
-					<option value="upHorCorridor">Corredor horizontal</option>
-				</select>
-                <select id="chooseClassMap" name="chooseClassMap">
-					<option value="-1">Selecionar...</option>
-					<option value="terrain">Terreno</option>
-					<option value="squareShapeBig">Local</option>
-				</select>
-                <input type="file" id="myfile" name="myfile" />
+                <div class="modal-header">
+                    <p class="modal-title">Adicionar Imagens</p>
+                    <span id="closeUp" class="closeUp">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <h5>
+                        Escolha o tipo de elemento que deseja adicionar e depois a imagem.
+                    </h5>
+                    <p>Para saber como preparar boas imagens para seu mapa clique <a href="#">aqui</a></p>
+                    <p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
+                    <select name="chooseClass" id="chooseClass">
+						<option id="chooseClass" value="-1">Selecionar...</option>
+						<option value="upCreature">Criatura</option>
+						<option value="upSmallItem">Item pequeno</option>
+						<option value="upMediumItem">Item médio</option>
+						<option value="upSmallRoom">Sala pequena</option>
+						<option value="upBigRoom">Sala grande</option>
+						<option value="upVertCorridor">Corredor vertical</option>
+						<option value="upHorCorridor">Corredor horizontal</option>
+					</select>
+                    <select id="chooseClassMap" name="chooseClassMap">
+						<option value="-1">Selecionar...</option>
+						<option value="terrain">Terreno</option>
+						<option value="squareShapeBig">Local</option>
+					</select>
+                    <input type="file" id="myfile" name="myfile" />
+                </div>
             </div>
         </div>
 
