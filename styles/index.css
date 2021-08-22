@@ -1,0 +1,82 @@
+@import './mapitens/background.css';
+@import './mapitens/dice.css';
+@import './mapitens/terrain.css';
+@import './mapitens/player.css';
+@import './mapitens/worldPlaces.css';
+@import './mapitens/upload.css';
+@import './mapitens/itens.css';
+@import './modal.css';
+
+
+
+/* --------------- */
+.smallRoom {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    background-image: url("../img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.corridorh {
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    top: 150px;
+    background-image: url("../img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.corridorv {
+    width: 30px;
+    height: 150px;
+    position: absolute;
+    top: 150px;
+    background-image: url("../img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.bigRoom {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 150px;
+    background-image: url("../img/tiles/scenario/floor.jpg");
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+/* ------------------ */
+
+
+
+
+
+/* backgroud dos itens */
+
+
+
+/* gerador de mundos */
+
+
+
+
+/* places of the world */
+
+
+
+
+/* estilo dos itens de upload */
+

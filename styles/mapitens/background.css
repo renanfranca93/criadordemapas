@@ -1,0 +1,24 @@
+.bgStyle1 {
+    background-color: #f0f0f0;
+    background-repeat: repeat;
+}
+
+.bgStyle2 {
+    background-image: url("../../img/bg/sq3.png");
+    background-repeat: repeat;
+}
+
+.bgStyle3 {
+    background-image: url("../../img/bg/wood3.jpg");
+    background-repeat: repeat;
+}
+
+.bgStyle4 {
+    background-image: url("../../img/bg/paper2.jpg");
+    background-repeat: repeat;
+}
+
+.bgStyle5 {
+    background-image: url("../../img/bg/dark.jpg");
+    background-repeat: repeat;
+}

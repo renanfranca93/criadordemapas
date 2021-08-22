@@ -40,6 +40,15 @@ input {
     border-radius: 2px;
 }
 
+.button-big {
+    height: 20px;
+    transition: filter 0.2s;
+}
+
+.button-big:hover {
+    filter: brightness(0.8);
+}
+
 
 .rounded {
     border-radius: 4px;
@@ -66,107 +75,7 @@ input {
 
 
 
-.itemSmall {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
 
-.itemMediumPortrait {
-    width: 20px;
-    height: 40px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.squareShapeMedium {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.squareShapeBig {
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.textdiv {
-    background-color: #f0f0f0;
-    opacity: 0.5;
-    height: 20px;
-    line-height: 20px;
-    width: 100px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    cursor: pointer;
-    border: 1px solid #000;
-    font-size: 70%;
-    font-weight: bold;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.player {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.creature {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
 
 .bgSelector {
     padding: 0;
@@ -215,78 +124,7 @@ input {
 
 /* The Modal (background) */
 
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 10;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-}
 
-
-/* Modal Content/Box */
-
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    background-color: #6b5a55;
-    color: #FAE1B3;
-    margin: 15% auto;
-    /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    /* Could be more or less, depending on screen size */
-}
-
-.modal-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-}
-
-.modal-title {
-    font-size: 1.3rem;
-    margin: 0;
-    font-weight: normal;
-    margin-left: 0.5rem;
-}
-
-.modal-footer {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-}
-
-.nao_class {
-    margin-right: 1rem;
-}
-
-.modal-header img {
-    height: 3rem;
-}
-
-.modal-header div {
-    display: flex;
-    align-items: flex-end;
-}
 
 
 /* The Close Button */
@@ -388,17 +226,15 @@ input {
     cursor: pointer
 }
 
+.topnav img:hover {
+    filter: brightness(0.8);
+}
+
 .topbar-options img {
     height: 3rem;
     margin-right: 0.5rem;
 }
 
-.topbar-options img:hover,
-#topnav-add-item img:hover,
-#topnav-delete-item img:hover,
-#topnav-add-text img:hover {
-    filter: brightness(0.8);
-}
 
 #topnav-add-item img,
 #topnav-delete-item img,

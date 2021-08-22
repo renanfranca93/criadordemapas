@@ -1,0 +1,225 @@
+.goblin {
+    background-image: url("../../img/tiles/creatures/goblin.png");
+    width: 25px;
+    height: 35px;
+}
+
+.knight {
+    background-image: url("../../img/tiles/creatures/knight.png");
+    width: 35px;
+    height: 45px;
+}
+
+.chest {
+    background-image: url("../../img/tiles/itens/chest.png");
+}
+
+.key {
+    background-image: url("../../img/tiles/markers/key.png");
+}
+
+.fire {
+    background-image: url("../../img/tiles/itens/fire.png");
+}
+
+.wolf {
+    background-image: url("../../img/tiles/creatures/wolf.png");
+    width: 35px;
+    height: 35px;
+}
+
+.spider {
+    background-image: url("../../img/tiles/creatures/spider.png");
+    width: 35px;
+    height: 35px;
+}
+
+.soldier {
+    background-image: url("../../img/tiles/creatures/soldier.png");
+    width: 45px;
+}
+
+.archer {
+    background-image: url("../../img/tiles/creatures/archer.png");
+    width: 35px;
+    height: 55px;
+}
+
+.skeleton {
+    background-image: url("../../img/tiles/creatures/skeleton.png");
+    width: 35px;
+    height: 45px;
+}
+
+.thief {
+    background-image: url("../../img/tiles/creatures/thief.png");
+    width: 35px;
+    height: 45px;
+}
+
+.ogre {
+    background-image: url("../../img/tiles/creatures/ogre.png");
+    width: 35px;
+    height: 45px;
+}
+
+.orc {
+    background-image: url("../../img/tiles/creatures/orc.png");
+    width: 35px;
+    height: 45px;
+}
+
+.giant {
+    background-image: url("../../img/tiles/creatures/giant.png");
+    width: 35px;
+    height: 45px;
+}
+
+.dragon {
+    background-image: url("../../img/tiles/creatures/dragon.png");
+    width: 45px;
+}
+
+.barbarian {
+    background-image: url("../../img/tiles/creatures/barbarian.png");
+    width: 35px;
+    height: 45px;
+}
+
+.rogue {
+    background-image: url("../../img/tiles/creatures/rogue.png");
+    width: 35px;
+    height: 45px;
+}
+
+.doorclosed {
+    background-image: url("../../img/tiles/itens/closeddoor.png");
+    width: 60px;
+}
+
+.dooropen {
+    background-image: url("../../img/tiles/itens/opendoor.png");
+}
+
+.torch {
+    background-image: url("../../img/tiles/scenario/torch.png");
+}
+
+.trhone {
+    background-image: url("../../img/tiles/scenario/throne.png");
+    width: 35px;
+}
+
+.blood {
+    background-image: url("../../img/tiles/scenario/blood.png");
+}
+
+.bones {
+    background-image: url("../../img/tiles/scenario/bones.png");
+}
+
+.stairs {
+    background-image: url("../../img/tiles/scenario/stairs.png");
+}
+
+.itemSmall {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.itemMediumPortrait {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.squareShapeMedium {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.squareShapeBig {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.textdiv {
+    background-color: #f0f0f0;
+    opacity: 0.5;
+    height: 20px;
+    line-height: 20px;
+    width: 100px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    cursor: pointer;
+    border: 1px solid #000;
+    font-size: 70%;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.player {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
+
+.creature {
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+}
