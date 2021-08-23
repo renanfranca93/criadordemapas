@@ -62,8 +62,7 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
-						height="20px" >
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement() class="btn btn-small">
 				</span>
                 <span id="addItemMap">
 					<label for="addTiles">Adicione Itens:</label>
@@ -102,8 +101,7 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
-						height="20px" >
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement() class="btn btn-small">
 				</span>
             </div>
             <div id="topnav-delete-item">
@@ -113,8 +111,7 @@
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
-						height="20px" >
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement() class="btn btn-small">
 
 				</span>
                 <span id="deleteItemMap">
@@ -123,30 +120,29 @@
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
-						height="20px" >
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement() class="btn btn-small" >
 				</span>
             </div>
             <div id="topnav-add-text">
                 <label for="addTextInput">Adicione Texto:</label>
                 <div>
                     <input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
-                    <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" height="20px">
+                    <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" class="btn btn-small">
                 </div>
             </div>
             <div class="topbar-options">
-                <img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" class="button-big">
-                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="button-big" id="newMap" onclick="redirect('index')">
-                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="button-big" id="newDung" onclick="redirect('index',false,true)">
-                <img id="modalBtn" title="Alternar de editor" class="button-big">
+                <img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" class="btn btn-big">
+                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big" id="newMap" onclick="redirect('index')">
+                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big" id="newDung" onclick="redirect('index',false,true)">
+                <img id="modalBtn" title="Alternar de editor" class="btn btn-big">
                 <!-- <button id="modalBtn"></button> -->
-                <img src="img/icons/new/cog.png" title="Opções" class="button-big" id="myBtn" >
+                <img src="img/icons/new/cog.png" title="Opções" class="btn btn-big" id="myBtn" >
 
 
             </div>
             <div id="topnav-options-end">
-                <div id="d6" class="diceRoller dice1" onclick=rolld6()></div>
-                <div id="selectorBg" class="bgSelector bgStyle1" onclick="changeBg()"></div>
+                <div id="d6" class="diceRoller dice1 btn btn-big" onclick=rolld6()></div>
+                <div id="selectorBg" class="btn btn-big bgSelector bgStyle1 " onclick="changeBg()"></div>
             </div>
         </div>
 

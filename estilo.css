@@ -40,13 +40,24 @@ input {
     border-radius: 2px;
 }
 
-.button-big {
-    height: 20px;
+.btn {
     transition: filter 0.2s;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-box-shadow: 4px 4px 0px 0px #000000; 
+    box-shadow: 4px 4px 0px 0px #000000;
 }
 
-.button-big:hover {
+.btn:hover {
     filter: brightness(0.8);
+}
+
+.btn-big {
+    height: 3rem;   
+}
+
+.btn-small {
+    height: 2rem;
 }
 
 
@@ -222,27 +233,16 @@ input {
     align-items: center;
 }
 
-.topnav img {
-    cursor: pointer
-}
-
-.topnav img:hover {
-    filter: brightness(0.8);
-}
-
-.topbar-options img {
-    height: 3rem;
-    margin-right: 0.5rem;
+.topbar-options {
+    gap: 0.5rem;
 }
 
 
 #topnav-add-item img,
 #topnav-delete-item img,
 #topnav-add-text img {
-    height: 2rem;
     margin-left: 0.5rem;
     vertical-align: middle;
-    transition: filter 0.7s;
 }
 
 #topnav-options-end {
