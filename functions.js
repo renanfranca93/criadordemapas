@@ -30,7 +30,7 @@ function changeBg() {
     seletor.removeAttribute("class");
     body.removeAttribute("class");
 
-    seletor.setAttribute("class", "bgSelector btn btn-big bgStyle" + nextStyle);
+    seletor.setAttribute("class", "bgSelector btn btn-big-plus bgStyle" + nextStyle);
     body.setAttribute("class", "bgStyle" + numberStyle);
 
     localStorage.setItem("criadordemasmorrabg", "bgStyle" + numberStyle);
@@ -42,9 +42,9 @@ function rolld6() {
     var d6 = document.getElementById("d6");
     setTimeout(function() {
         d6.removeAttribute("class");
-        d6.setAttribute("class", "diceRoller btn btn-big dice" + random);
+        d6.setAttribute("class", "diceRoller btn btn-big-plus dice" + random);
     }, 1000);
-    d6.setAttribute("class", "diceRoller diceWhat shake btn btn-big");
+    d6.setAttribute("class", "diceRoller diceWhat shake btn btn-big-plus");
 }
 
 function loadPage() {
@@ -67,7 +67,7 @@ function loadPage() {
 
     var seletor = document.getElementById("selectorBg");
     seletor.removeAttribute("class");
-    seletor.setAttribute("class", "bgSelector btn btn-big bgStyle" + bgSeletorValue);
+    seletor.setAttribute("class", "bgSelector btn btn-big-plus bgStyle" + bgSeletorValue);
 
     var url = window.location.href;
 

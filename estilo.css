@@ -52,6 +52,11 @@ input {
     filter: brightness(0.8);
 }
 
+.btn-big-plus {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
 .btn-big {
     height: 3rem;   
 }
@@ -61,19 +66,13 @@ input {
 }
 
 
-.rounded {
+.logo {
     border-radius: 4px;
+    -webkit-box-shadow: 7px 7px 0px 0px #000000; 
+    box-shadow: 7px 7px 0px 0px #000000;
 }
 
-#first {
-    float: left;
-    width: 50%;
-}
 
-#second {
-    float: left;
-    width: 50%;
-}
 
 #conteudo {
     float: left;
@@ -90,8 +89,6 @@ input {
 
 .bgSelector {
     padding: 0;
-    width: 3.5rem;
-    height: 3.5rem;
     padding: 0 !important;
     margin-left: 0.5rem;
     border-radius: 9px;
@@ -101,8 +98,6 @@ input {
 }
 
 .diceRoller {
-    width: 3.5rem;
-    height: 3.5rem;
     padding: 0 !important;
     /* position: absolute; */
     z-index: 9;
@@ -115,27 +110,37 @@ input {
     border: 0px;
 }
 
-@keyframes example {
-    0% {
-        width: 30px;
-        height: 30px;
+/* fazer o dado tremer */
+
+.shake {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
     }
-    50% {
-        width: 40px;
-        height: 40px;
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
     }
-    100% {
-        width: 30px;
-        height: 30px;
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
     }
 }
 
+
 /* COLAPSE ESTILO */
-
-
-/* The Modal (background) */
-
-
 
 
 /* The Close Button */
@@ -176,34 +181,7 @@ input {
 }
 
 
-/* fazer o dado tremer */
 
-.shake {
-    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-
-@keyframes shake {
-    10%,
-    90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-    20%,
-    80% {
-        transform: translate3d(2px, 0, 0);
-    }
-    30%,
-    50%,
-    70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-    40%,
-    60% {
-        transform: translate3d(4px, 0, 0);
-    }
-}
 
 
 /* opcoes do menu */
