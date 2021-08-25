@@ -46,10 +46,20 @@ input {
     border-radius: 8px;
     -webkit-box-shadow: 4px 4px 0px 0px #000000; 
     box-shadow: 4px 4px 0px 0px #000000;
+    background: #473c38;
+    color: #ffdc9d;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .btn:hover {
     filter: brightness(0.8);
+}
+
+.btn-text {
+    width: auto;
+    height: 3.5rem;
 }
 
 .btn-big-plus {
