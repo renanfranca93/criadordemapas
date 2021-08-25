@@ -11,7 +11,7 @@ O arquivo `/theme.json` tem os dados do tema
 3. Aperte `F12` para abrir o DevTools;
 4. Vá na aba `Aplication` ;
 5. Do lado esquerdo, vá em `Storage` -> `Local Storage` -> `https://game-icons.net/` ;
-6. Copie o conteúdo de `/themes.json` e cole no valor correspondente à chave `game-icons`
+6. Copie o conteúdo de `/theme.json` e cole no valor correspondente à chave `game-icons`;
 
 ![Conteudo](https://user-images.githubusercontent.com/11570800/109676383-f1536b00-7b78-11eb-9518-d4beea9ee8c1.png)
 

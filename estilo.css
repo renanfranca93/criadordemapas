@@ -1,3 +1,9 @@
+:root {
+    --bg-color-dark: #473c38;
+    --bg-color-light: #6b5a55;
+    --main-color: #ffdc9d;
+}
+
 .invisible {
     display: none;
 }
@@ -59,7 +65,24 @@ input {
 
 .btn-text {
     width: auto;
+    min-width: 10rem;
     height: 3.5rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-text img {
+    height: 2rem;
+    border-radius: 8px;
+    padding: 0.1rem;
+}
+
+.btn-secondary {
+    background: var(--bg-color-light);
+    border-top: 1px solid var(--bg-color-dark);
+    border-left: 1px solid var(--bg-color-dark);
 }
 
 .btn-big-plus {
