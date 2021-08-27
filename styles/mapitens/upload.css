@@ -1,0 +1,69 @@
+.upCreature {
+    width: 35px;
+    height: 45px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    border: 0px;
+    cursor: move;
+}
+
+.upSmallItem {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    border: 0px;
+    cursor: move;
+}
+
+.upMediumItem {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 9;
+    top: 150px;
+    border: 0px;
+    cursor: move;
+}
+
+.upSmallRoom {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
+}
+
+.upBigRoom {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
+}
+
+.upVertCorridor {
+    width: 30px;
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
+}
+
+.upHorCorridor {
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    border: 0px;
+    cursor: move;
+}

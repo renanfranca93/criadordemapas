@@ -1,0 +1,41 @@
+.terrain {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 150px;
+    background-size: 6mm;
+    text-align: center;
+    border: 0px;
+    cursor: move;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.plane {
+    background-image: url("../../img/world/planicie.png");
+}
+
+.ice {
+    background-image: url("../../img/world/ice.png");
+}
+
+.forest {
+    background-image: url("../../img/world/floresta.png");
+}
+
+.mountain {
+    background-image: url("../../img/world/montanha.png");
+}
+
+.pant {
+    background-image: url("../../img/world/pantano.png");
+}
+
+.water {
+    background-image: url("../../img/world/agua.png");
+}
+
+.desert {
+    background-image: url("../../img/world/deserto.png");
+}

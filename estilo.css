@@ -1,3 +1,9 @@
+:root {
+    --bg-color-dark: #473c38;
+    --bg-color-light: #6b5a55;
+    --main-color: #ffdc9d;
+}
+
 .invisible {
     display: none;
 }
@@ -40,20 +46,66 @@ input {
     border-radius: 2px;
 }
 
+.btn {
+    transition: filter 0.2s;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-box-shadow: 4px 4px 0px 0px #000000; 
+    box-shadow: 4px 4px 0px 0px #000000;
+    background: #473c38;
+    color: #ffdc9d;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-.rounded {
+.btn:hover {
+    filter: brightness(0.8);
+}
+
+.btn-text {
+    width: auto;
+    min-width: 10rem;
+    height: 3.5rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-text img {
+    height: 2rem;
+    border-radius: 8px;
+    padding: 0.1rem;
+}
+
+.btn-secondary {
+    background: var(--bg-color-light);
+    border-top: 1px solid var(--bg-color-dark);
+    border-left: 1px solid var(--bg-color-dark);
+}
+
+.btn-big-plus {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.btn-big {
+    height: 3rem;   
+}
+
+.btn-small {
+    height: 2rem;
+}
+
+
+.logo {
     border-radius: 4px;
+    -webkit-box-shadow: 7px 7px 0px 0px #000000; 
+    box-shadow: 7px 7px 0px 0px #000000;
 }
 
-#first {
-    float: left;
-    width: 50%;
-}
 
-#second {
-    float: left;
-    width: 50%;
-}
 
 #conteudo {
     float: left;
@@ -66,112 +118,10 @@ input {
 
 
 
-.itemSmall {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
 
-.itemMediumPortrait {
-    width: 20px;
-    height: 40px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.squareShapeMedium {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.squareShapeBig {
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.textdiv {
-    background-color: #f0f0f0;
-    opacity: 0.5;
-    height: 20px;
-    line-height: 20px;
-    width: 100px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    cursor: pointer;
-    border: 1px solid #000;
-    font-size: 70%;
-    font-weight: bold;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.player {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
-
-.creature {
-    width: 30px;
-    height: 40px;
-    position: absolute;
-    z-index: 9;
-    top: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    border: 0px;
-    cursor: move;
-}
 
 .bgSelector {
     padding: 0;
-    width: 3.5rem;
-    height: 3.5rem;
     padding: 0 !important;
     margin-left: 0.5rem;
     border-radius: 9px;
@@ -181,8 +131,6 @@ input {
 }
 
 .diceRoller {
-    width: 3.5rem;
-    height: 3.5rem;
     padding: 0 !important;
     /* position: absolute; */
     z-index: 9;
@@ -195,98 +143,37 @@ input {
     border: 0px;
 }
 
-@keyframes example {
-    0% {
-        width: 30px;
-        height: 30px;
+/* fazer o dado tremer */
+
+.shake {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
     }
-    50% {
-        width: 40px;
-        height: 40px;
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
     }
-    100% {
-        width: 30px;
-        height: 30px;
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
     }
 }
+
 
 /* COLAPSE ESTILO */
-
-
-/* The Modal (background) */
-
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 10;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-}
-
-
-/* Modal Content/Box */
-
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    background-color: #6b5a55;
-    color: #FAE1B3;
-    margin: 15% auto;
-    /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    /* Could be more or less, depending on screen size */
-}
-
-.modal-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-}
-
-.modal-title {
-    font-size: 1.3rem;
-    margin: 0;
-    font-weight: normal;
-    margin-left: 0.5rem;
-}
-
-.modal-footer {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-}
-
-.nao_class {
-    margin-right: 1rem;
-}
-
-.modal-header img {
-    height: 3rem;
-}
-
-.modal-header div {
-    display: flex;
-    align-items: flex-end;
-}
 
 
 /* The Close Button */
@@ -327,34 +214,7 @@ input {
 }
 
 
-/* fazer o dado tremer */
 
-.shake {
-    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-
-@keyframes shake {
-    10%,
-    90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-    20%,
-    80% {
-        transform: translate3d(2px, 0, 0);
-    }
-    30%,
-    50%,
-    70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-    40%,
-    60% {
-        transform: translate3d(4px, 0, 0);
-    }
-}
 
 
 /* opcoes do menu */
@@ -384,29 +244,16 @@ input {
     align-items: center;
 }
 
-.topnav img {
-    cursor: pointer
+.topbar-options {
+    gap: 0.5rem;
 }
 
-.topbar-options img {
-    height: 3rem;
-    margin-right: 0.5rem;
-}
-
-.topbar-options img:hover,
-#topnav-add-item img:hover,
-#topnav-delete-item img:hover,
-#topnav-add-text img:hover {
-    filter: brightness(0.8);
-}
 
 #topnav-add-item img,
 #topnav-delete-item img,
 #topnav-add-text img {
-    height: 2rem;
     margin-left: 0.5rem;
     vertical-align: middle;
-    transition: filter 0.7s;
 }
 
 #topnav-options-end {

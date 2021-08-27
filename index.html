@@ -4,7 +4,7 @@
 <head>
     <title>Criador de Mapas</title>
     <link rel="stylesheet" href="estilo.css">
-	<link rel="stylesheet" href="./styles/mapItens.css">
+	<link rel="stylesheet" href="./styles/index.css">
     <meta charset="utf-8" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         <div class="topnav">
 
             <div>
-                <img id="logo" src="img/logo-dungeon.png" class="rounded" width="160px" alt="">
+                <img id="logo" src="img/logo-dungeon.png" class="logo" width="160px" alt="">
             </div>
             <div id="topnav-add-item">
 
@@ -62,8 +62,7 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
-						height="20px" >
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement() class="btn btn-small">
 				</span>
                 <span id="addItemMap">
 					<label for="addTiles">Adicione Itens:</label>
@@ -102,8 +101,7 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
-						height="20px" >
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement() class="btn btn-small">
 				</span>
             </div>
             <div id="topnav-delete-item">
@@ -113,8 +111,7 @@
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
-						height="20px" >
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement() class="btn btn-small">
 
 				</span>
                 <span id="deleteItemMap">
@@ -123,30 +120,29 @@
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
-						height="20px" >
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement() class="btn btn-small" >
 				</span>
             </div>
             <div id="topnav-add-text">
                 <label for="addTextInput">Adicione Texto:</label>
                 <div>
                     <input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
-                    <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" height="20px">
+                    <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" class="btn btn-small">
                 </div>
             </div>
             <div class="topbar-options">
-                <img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" height="20px">
-                <img src="img/icons/new/map-plus.png" title="Novo mapa" height="20px" id="newMap" onclick="redirect('index')">
-                <img src="img/icons/new/map-plus.png" title="Novo mapa" height="20px" id="newDung" onclick="redirect('index',false,true)">
-                <img id="modalBtn" title="Alternar de editor" height="20px">
+                <img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" class="btn btn-big">
+                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big" id="newMap" onclick="redirect('index')">
+                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big" id="newDung" onclick="redirect('index',false,true)">
+                <img id="modalBtn" title="Alternar de editor" class="btn btn-big">
                 <!-- <button id="modalBtn"></button> -->
-                <img src="img/icons/new/cog.png" title="Opções" id="myBtn" height="25px">
+                <img src="img/icons/new/cog.png" title="Opções" class="btn btn-big" id="myBtn" >
 
 
             </div>
             <div id="topnav-options-end">
-                <div id="d6" class="diceRoller dice1" onclick=rolld6()></div>
-                <div id="selectorBg" class="bgSelector bgStyle1" onclick="changeBg()"></div>
+                <div id="d6" class="diceRoller dice1 btn btn-big-plus" onclick=rolld6()></div>
+                <div id="selectorBg" class="btn btn-big-plus bgSelector bgStyle1 " onclick="changeBg()"></div>
             </div>
         </div>
 
@@ -166,10 +162,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div>
-                        <img src="img/icons/new/warning.png">
+                        <img src="img/icons/new/warning2.png">
                         <p class="modal-title">Atenção!</p>
                     </div>
-                    <img src="img/icons/new/cancel.png" class="close">
+                    <img src="img/icons/new/cancel.png" class="close btn btn-big">
                 </div>
                 <div class="modal-body">
                     <h4> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido salvo!
@@ -177,9 +173,18 @@
                     <h4>Prosseguir?</h4>
                 </div>
                 <div class="modal-footer">
-                    <button class="nao_class">Não</button>
-                    <button id="toWorldGen" onclick="redirect('index')">Sim</button>
-                    <button id="toDundGen" onclick="redirect('index',false,true)">Sim</button>
+                    <button class="nao_class btn btn-text btn-secondary">
+						<img src="img/icons/new/cancel2.png">
+						Não
+					</button>
+                    <button id="toWorldGen" class="btn btn-text" onclick="redirect('index')">
+						<img src="img/icons/new/confirm2.png">
+						Sim
+					</button>
+                    <button id="toDundGen" class="btn btn-text" onclick="redirect('index',false,true)">
+						<img src="img/icons/new/confirm2.png">
+						Sim
+					</button>
                 </div>
 
 
@@ -191,10 +196,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div>
-                        <img src="img/icons/new/pic.png">
+                        <img src="img/icons/new/pic2.png">
                         <p class="modal-title">Adicionar Imagens</p>
                     </div>
-                    <img src="img/icons/new/cancel.png" id="closeUp" class="closeUp">
+                    <img src="img/icons/new/cancel.png" id="closeUp" class="closeUp btn btn-big">
                 </div>
                 <div class="modal-body">
                     <h5>
@@ -230,10 +235,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div>
-                        <img src="img/icons/new/save.png">
+                        <img src="img/icons/new/save2.png">
                         <p class="modal-title">Salvar/Restaurar Mapa</p>
                     </div>
-                    <img src="img/icons/new/cancel.png" class="close">
+                    <img src="img/icons/new/cancel.png" class="close btn btn-big">
                 </div>
                 <div class="modal-body">
                     <div class="split-div">
