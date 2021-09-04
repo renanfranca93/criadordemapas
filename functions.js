@@ -95,7 +95,7 @@ function loadPage() {
         sumirIten4.setAttribute("class", "invisible");
         var sumirIten5 = document.getElementById("chooseClassMap");
         sumirIten5.setAttribute("class", "invisible");
-        var nameButton = document.getElementById("modalBtn");
+        var nameButton = document.getElementById("changeMode");
         nameButton.setAttribute("src", "img/icons/new/world.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Mundos");
         // nameButton.innerHTML = "Criador de Mundos";
@@ -115,7 +115,7 @@ function loadPage() {
         sumirIten4.setAttribute("class", "invisible");
         var sumirIten5 = document.getElementById("chooseClass");
         sumirIten5.setAttribute("class", "invisible");
-        var nameButton = document.getElementById("modalBtn");
+        var nameButton = document.getElementById("changeMode");
         // nameButton.innerHTML = "Criador de Masmorras";
         nameButton.setAttribute("src", "img/icons/new/dungeon.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Dungeons");
@@ -137,10 +137,7 @@ function redirect(page, modal, type) {
     }
 }
 
-function closeModal() {
-    modal.style.display = "none";
-    aboutModal.style.display = "none";
-}
+
 
 function openModal() {
     document.getElementById("myBtn").click();
@@ -243,11 +240,11 @@ function saveMap() {
     console.log(nomeMapa);
     if (typeOfSystem == "mp") {
         localStorage.setItem("world." + nomeMapa, JSON.stringify(corpo));
-        closeModal();
+        closeMainModal();
         redirect("index", true);
     } else {
         localStorage.setItem("dungeon." + nomeMapa, JSON.stringify(corpo));
-        closeModal();
+        closeMainModal();
         redirect("index", true, true);
     }
 }
@@ -318,7 +315,7 @@ function loadMap(map) {
             }
         }
     }
-    closeModal();
+    closeMainModal();
     mountaAllMapElements();
 }
 
@@ -450,12 +447,58 @@ function readMapFile() {
 
 //funcao do modal
 
+
+var mainModal = document.getElementById("mainModal");
+var modalSobre = document.getElementById("modalSobre");
+var modalImagens = document.getElementById("modalImagens");
+var modalConfirm = document.getElementById("modalConfirm");
+var modalCarregar = document.getElementById("modalCarregar");
+
+function openMainModal() {
+    mainModal.style.display = "block";
+}
+
+function closeMainModal() {
+    mainModal.style.display = "none";
+    closeAllModalContent();
+}
+
+function closeAllModalContent() {
+    modalSobre.style.display = "none";
+    modalImagens.style.display = "none";
+    modalConfirm.style.display = "none";
+    modalCarregar.style.display = "none";
+}
+
+function openModalSobre() {
+    closeAllModalContent();
+    openMainModal();
+    modalSobre.style.display = "block";
+}
+function openModalImagens() {
+    closeAllModalContent();
+    openMainModal();
+    modalImagens.style.display = "block";
+}
+function openModalConfirm() {
+    closeAllModalContent();
+    openMainModal();
+    modalConfirm.style.display = "block";
+}
+function openModalCarregar() {
+    closeAllModalContent();
+    openMainModal();
+    modalCarregar.style.display = "block";
+}
+
+
+
 var modal = document.getElementById("myModal");
 
-var aboutModal = document.getElementById("aboutModal");
+//var aboutModal = document.getElementById("aboutModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("myBtnn");
 
 // Get the button that opens the modal
 var aboutBtn = document.getElementById("aboutBtn");
@@ -463,37 +506,13 @@ var aboutBtn = document.getElementById("aboutBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[1];
 
-var span4 = document.getElementsByClassName("close")[2];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-};
-
-// When the user clicks on the button, open the modal
-aboutBtn.onclick = function() {
-    aboutModal.style.display = "block";
-};
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-    aboutModal.style.display = "none";
-    console.log("close span")
-};
-
-span4.onclick = function() {
-    modal.style.display = "none";
-    aboutModal.style.display = "none";
-    console.log("close span")
-};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        aboutModal.style.display = "none";
-        console.log("close window")
+    console.log("windown click");
+    console.log(event.target);
+    if (event.target == mainModal) {
+        closeMainModal();
     }
 };
 
@@ -509,53 +528,26 @@ var span2 = document.getElementsByClassName("nao_class")[0];
 var span3 = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-modalBtn.onclick = function() {
-    modal2.style.display = "block";
-};
 
-// When the user clicks on <span> (x), close the modal
-span2.onclick = function() {
-    modal2.style.display = "none";
-};
 
-// When the user clicks on <span> (x), close the modal
-span3.onclick = function() {
-    modal2.style.display = "none";
-};
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
-    }
-};
 
 //funcao do modal
 
 var modalUp = document.getElementById("uploadImageModal");
 
-// Get the button that opens the modal
-var btnUp = document.getElementById("btnUpload");
 
 // Get the <span> element that closes the modal
 var spanUp = document.getElementById("closeUp");
 
-// When the user clicks on the button, open the modal
-btnUp.onclick = function() {
-    modalUp.style.display = "block";
-};
+
 
 // When the user clicks on <span> (x), close the modal
 spanUp.onclick = function() {
     modalUp.style.display = "none";
 };
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modalUp.style.display = "none";
-    }
-};
+
 
 var input = document.getElementById("myfile");
 input.onchange = function() {
