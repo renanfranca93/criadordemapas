@@ -19,9 +19,6 @@
     /* Black w/ opacity */
 }
 
-
-/* Modal Content/Box */
-
 .modal-content {
     display: flex;
     flex-direction: column;
@@ -32,6 +29,9 @@
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
+    border-radius: 1rem;
+    -webkit-box-shadow: 10px 10px 0px 0px #000000; 
+    box-shadow: 10px 10px 0px 0px #000000;
     /* Could be more or less, depending on screen size */
 }
 
@@ -76,4 +76,37 @@
     margin-right: -35px;
     align-self: flex-end;
     z-index: 99;
+}
+
+#about-content {
+    display:flex;
+}
+
+#about-content div {
+    flex: 1;
+
+}
+
+#about-content img {
+    width: 100%;
+}
+
+#about-logo {
+    align-items: center;
+    display: flex;
+}
+
+#about-content p {
+    font-weight: lighter;
+    font-size: 1.5rem;
+
+}
+
+#about-content a {
+    color: #FAE1B3;
+    font-weight: bold;
+}
+
+#about-content span {
+    margin-top: 1rem;
 }
