@@ -131,12 +131,13 @@
                 </div>
             </div>
             <div class="topbar-options">
-                <img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" class="btn btn-big">
-                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big" id="newMap" onclick="redirect('index')">
-                <img src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big" id="newDung" onclick="redirect('index',false,true)">
-                <img id="modalBtn" title="Alternar de editor" class="btn btn-big">
+                <img id="btnUpload" src="img/icons/new/pic-upload.png" 	title="Upload de imagem" class="btn btn-big" onclick="openModalImagens()">
+                <img id="newMap" 	src="img/icons/new/map-plus.png" 	title="Novo mapa" class="btn btn-big"  onclick="redirect('index')">
+                <img id="newDung"	src="img/icons/new/map-plus.png" 	title="Novo mapa" class="btn btn-big"  onclick="redirect('index',false,true)">
+                <img id="changeMode" onclick="openModalConfirm()" title="Alternar de editor" class="btn btn-big">
                 <!-- <button id="modalBtn"></button> -->
-                <img src="img/icons/new/cog.png" title="Opções" class="btn btn-big" id="myBtn" >
+                <img src="img/icons/new/cog.png" title="Opções" class="btn btn-big" id="myBtn" onclick="openModalCarregar()">
+				<img src="img/icons/new/info.png" title="Sobre" class="btn btn-small" id="aboutBtn" onclick="openModalSobre()">
 
 
             </div>
@@ -156,40 +157,7 @@
         </div>
 
 
-        <div id="confirmChange" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>
-                        <img src="img/icons/new/warning2.png">
-                        <p class="modal-title">Atenção!</p>
-                    </div>
-                    <img src="img/icons/new/cancel.png" class="close btn btn-big">
-                </div>
-                <div class="modal-body">
-                    <h4> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido salvo!
-                    </h4>
-                    <h4>Prosseguir?</h4>
-                </div>
-                <div class="modal-footer">
-                    <button class="nao_class btn btn-text btn-secondary">
-						<img src="img/icons/new/cancel2.png">
-						Não
-					</button>
-                    <button id="toWorldGen" class="btn btn-text" onclick="redirect('index')">
-						<img src="img/icons/new/confirm2.png">
-						Sim
-					</button>
-                    <button id="toDundGen" class="btn btn-text" onclick="redirect('index',false,true)">
-						<img src="img/icons/new/confirm2.png">
-						Sim
-					</button>
-                </div>
-
-
-            </div>
-        </div>
+       
 
         <div id="uploadImageModal" class="modal">
             <!-- Modal content -->
@@ -286,6 +254,183 @@
 				</div>
                 
                 
+			</div>
+			
+
+		</div>
+
+		<!-- The Modal -->
+        <div id="mainModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+				<div class="close-div">
+					<img src="img/icons/new/cancel.png" class="close btn btn-big" onclick="closeMainModal()">
+				</div>
+				<div class="modal-variable" id="modalSobre">
+
+					<div class="modal-header">
+						<div>
+							<img src="img/icons/new/info2.png">
+							<p class="modal-title">Sobre O criador de mundos</p>
+						</div>
+						
+					</div>
+					<div class="modal-body">
+						<div id="about-content">
+							<div>
+								<p>Criado por 
+									<a href="https://github.com/renanfranca93"  target="_blank">
+										RENAN FRANÇA
+									</a>
+								</p>
+								<p>Interface: 
+									<a href="https://github.com/ArnaldoAF"  target="_blank">
+										Arnaldo Assis Ferreira
+									</a>
+								</p>
+								<p>Ícones: 
+									<a href="https://game-icons.net/"  target="_blank">
+										game-icons.net
+									</a>
+									
+								</p>
+		
+								<p>Sugestões: 
+									<a href="https://forms.gle/3RiyBDhxwKSjqFsQ7"  target="_blank">
+										Link
+									</a>
+								</p>
+								<p>Como usar: 
+									<a href="https://www.youtube.com/channel/UCQOr-yKxMMXAZa7hWXjw1NA/videos"  target="_blank">
+										Link
+									</a>
+								</p>
+
+							</div>
+							<div id="about-logo">
+								<img id="logo" src="img/logo-dungeon.png" class="logo" alt="">
+							</div>
+						</div>
+						
+						
+					</div>
+					<div class="modal-footer">
+						
+					</div>
+				</div>
+				<div class="modal-variable" id="modalImagens">
+					<div class="modal-header">
+						<div>
+							<img src="img/icons/new/pic2.png">
+							<p class="modal-title">Adicionar Imagens</p>
+						</div>
+					</div>
+					<div class="modal-body">
+						<h5>
+							Escolha o tipo de elemento que deseja adicionar e depois a imagem.
+						</h5>
+						<p>Para saber como preparar boas imagens para seu mapa clique <a href="#">aqui</a></p>
+						<p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
+						<select name="chooseClass" id="chooseClass">
+							<option id="chooseClass" value="-1">Selecionar...</option>
+							<option value="upCreature">Criatura</option>
+							<option value="upSmallItem">Item pequeno</option>
+							<option value="upMediumItem">Item médio</option>
+							<option value="upSmallRoom">Sala pequena</option>
+							<option value="upBigRoom">Sala grande</option>
+							<option value="upVertCorridor">Corredor vertical</option>
+							<option value="upHorCorridor">Corredor horizontal</option>
+						</select>
+						<select id="chooseClassMap" name="chooseClassMap">
+							<option value="-1">Selecionar...</option>
+							<option value="terrain">Terreno</option>
+							<option value="squareShapeBig">Local</option>
+						</select>
+						<input type="file" id="myfile" name="myfile" />
+					</div>
+				</div>
+				<div class="modal-variable" id="modalConfirm">
+					<div class="modal-header">
+						<div>
+							<img src="img/icons/new/warning2.png">
+							<p class="modal-title">Atenção!</p>
+						</div>
+					</div>
+					<div class="modal-body">
+						<h4> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido salvo!
+						</h4>
+						<h4>Prosseguir?</h4>
+					</div>
+					<div class="modal-footer">
+						<button class="nao_classe btn btn-text btn-secondary" onclick="closeMainModal()">
+							<img src="img/icons/new/cancel2.png">
+							Não
+						</button>
+						<button id="toWorldGen" class="btn btn-text" onclick="redirect('index')">
+							<img src="img/icons/new/confirm2.png">
+							Sim
+						</button>
+						<button id="toDundGen" class="btn btn-text" onclick="redirect('index',false,true)">
+							<img src="img/icons/new/confirm2.png">
+							Sim
+						</button>
+					</div>
+				</div>
+				<div class="modal-variable" id="modalCarregar">
+					<div class="modal-header">
+						<div>
+							<img src="img/icons/new/save2.png">
+							<p class="modal-title">Salvar/Restaurar Mapa</p>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="split-div">
+							<div>
+								<h1>Salvar no Navegador</h1>
+								<p>Os mapas ficam salvos no navegador</p>
+	
+	
+							</div>
+							<div>
+	
+							</div>
+	
+						</div>
+						<input type="text" placeholder="Nome do mapa" id="nomeMapa">
+						<button onclick=saveMap() title="Salva no seu navegador para continuar a jogar depois">Salvar mapa
+						</button>
+	
+	
+						<button onclick=salvarPosicao() title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">Exportar</button>
+	
+						<br><br>
+						<select name="selectmap" id="selectmap">
+							<option value="-1">Nenhum</option>
+						</select>
+						<button onclick=loadMap() title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">Carregar
+							mapa</button>
+						<button onclick=deleteMap() title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">Excluir
+							mapa</button>
+						<br><br>
+						<input type="file" id="file-input" title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
+						<label><button id="read-button" onclick=readMapFile()
+								title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado">Importar
+								mapa</label></button>
+						<span>
+							<br><br>
+							<p>Para saber o que cada botão faz posicione o mouse sobre o mesmo</p>
+							<p>Para dar sugestões clique <a href="https://forms.gle/3RiyBDhxwKSjqFsQ7" target="new">aqui</a></p>
+							<p>Para vídeos de como usar a ferramenta clique <a
+									href="https://www.youtube.com/channel/UCQOr-yKxMMXAZa7hWXjw1NA/videos" target="new">aqui</a>
+							</p>
+					</div>
+					<div class="modal-footer">
+						
+					</div>
+					
+					
+				</div>
+				
 			</div>
 			
 

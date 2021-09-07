@@ -19,19 +19,19 @@
     /* Black w/ opacity */
 }
 
-
-/* Modal Content/Box */
-
 .modal-content {
     display: flex;
     flex-direction: column;
     background-color: #6b5a55;
     color: #FAE1B3;
-    margin: 15% auto;
+    margin: 3rem auto;
     /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
+    border-radius: 1rem;
+    -webkit-box-shadow: 10px 10px 0px 0px #000000; 
+    box-shadow: 10px 10px 0px 0px #000000;
     /* Could be more or less, depending on screen size */
 }
 
@@ -46,9 +46,9 @@
 }
 
 .modal-title {
-    font-size: 1.3rem;
+    font-size: 2rem;
     margin: 0;
-    font-weight: normal;
+    font-weight: bold;
     margin-left: 0.5rem;
 }
 
@@ -65,5 +65,48 @@
 
 .modal-header div {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+}
+
+.close-div {
+    display: flex;
+    flex: 1;
+    margin-top: -35px;
+    margin-bottom: -15px;
+    margin-right: -35px;
+    align-self: flex-end;
+    z-index: 99;
+}
+
+#about-content {
+    display:flex;
+}
+
+#about-content div {
+    flex: 1;
+
+}
+
+#about-content img {
+    width: 100%;
+}
+
+#about-logo {
+    align-items: center;
+    display: flex;
+}
+
+#about-content p {
+    font-weight: lighter;
+    font-size: 1.5rem;
+
+}
+
+#about-content a {
+    color: #FAE1B3;
+    font-weight: bold;
+}
+
+#about-content span {
+    margin-top: 1rem;
 }
