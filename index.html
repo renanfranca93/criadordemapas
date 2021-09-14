@@ -379,45 +379,46 @@
 						</div>
 					</div>
 					<div class="modal-body">
-						<div class="split-div">
-							<div>
-								<h1>Salvar no Navegador</h1>
-								<p>Os mapas ficam salvos no navegador</p>
-	
-	
+						<div id="save-content">
+							<div class="save-form">
+								<h1>Navegador</h1>
+								<p>Os mapas ficam salvos no navegador, mesmo depois de fechar</p>
+								<div>
+									<input type="text" placeholder="Nome do mapa" id="nomeMapa">
+									<button onclick=saveMap() title="Salva no seu navegador para continuar a jogar depois">Salvar mapa
+									</button>
+								</div>
+								<div>
+									<select name="selectmap" id="selectmap">
+										<option value="-1">Nenhum</option>
+									</select>
+									<button onclick=loadMap() title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">Carregar
+										mapa</button>
+									<button onclick=deleteMap() title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">Excluir
+										mapa</button>
+								</div>
 							</div>
 							<div>
-	
+								<h1>Exportar</h1>
+								<p>Exporte/Importe os mapas em arquivos para usar em outros navegadores</p>
+								<div>
+									<input type="text" placeholder="Nome do mapa" id="nomeMapa">
+									<button onclick=salvarPosicao() title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">Exportar</button>
+								</div>
+								<div>
+									<input type="file" id="file-input" title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
+									
+									<button id="read-button" onclick=readMapFile()
+									title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado">Importar
+									mapa
+								</button>
+
+								</div>
 							</div>
-	
 						</div>
-						<input type="text" placeholder="Nome do mapa" id="nomeMapa">
-						<button onclick=saveMap() title="Salva no seu navegador para continuar a jogar depois">Salvar mapa
-						</button>
-	
-	
-						<button onclick=salvarPosicao() title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">Exportar</button>
-	
-						<br><br>
-						<select name="selectmap" id="selectmap">
-							<option value="-1">Nenhum</option>
-						</select>
-						<button onclick=loadMap() title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">Carregar
-							mapa</button>
-						<button onclick=deleteMap() title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">Excluir
-							mapa</button>
-						<br><br>
-						<input type="file" id="file-input" title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
-						<label><button id="read-button" onclick=readMapFile()
-								title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado">Importar
-								mapa</label></button>
-						<span>
-							<br><br>
-							<p>Para saber o que cada botão faz posicione o mouse sobre o mesmo</p>
-							<p>Para dar sugestões clique <a href="https://forms.gle/3RiyBDhxwKSjqFsQ7" target="new">aqui</a></p>
-							<p>Para vídeos de como usar a ferramenta clique <a
-									href="https://www.youtube.com/channel/UCQOr-yKxMMXAZa7hWXjw1NA/videos" target="new">aqui</a>
-							</p>
+						
+
+							
 					</div>
 					<div class="modal-footer">
 						

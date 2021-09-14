@@ -110,3 +110,19 @@
 #about-content span {
     margin-top: 1rem;
 }
+
+#save-content {
+    display: flex;
+    gap: 2rem;
+}
+
+#save-content div {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    flex: 1;
+}
+
+#save-content div div {
+    margin-top: 1rem;
+}
