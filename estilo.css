@@ -73,6 +73,10 @@ input {
     gap: 1rem;
 }
 
+.btn-text-small {
+    height: 2.5rem;
+}
+
 .btn-text img {
     height: 2rem;
     border-radius: 8px;
