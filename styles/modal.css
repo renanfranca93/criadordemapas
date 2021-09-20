@@ -123,6 +123,20 @@
     flex: 1;
 }
 
-#save-content div div {
-    margin-top: 1rem;
+#save-content h1 {
+    margin: 0;
+    text-align: center;
+}
+
+#save-content p {
+     font-size: 1rem;
+     text-align: center;
+}
+
+#save-content .btn-text {
+    margin-top: 0.5rem;
+}
+
+#save-content .form {
+    margin-top: 2rem;
 }

@@ -2,27 +2,27 @@
 <html>
 
 <head>
-    <title>Criador de Mapas</title>
-    <link rel="stylesheet" href="estilo.css">
+	<title>Criador de Mapas</title>
+	<link rel="stylesheet" href="estilo.css">
 	<link rel="stylesheet" href="./styles/index.css">
-    <meta charset="utf-8" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+	<meta charset="utf-8" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 
 </head>
 
 <body>
-    <div id="tudo">
+	<div id="tudo">
 
-        <div class="topnav">
+		<div class="topnav">
 
-            <div>
-                <img id="logo" src="img/logo-dungeon.png" class="logo" width="160px" alt="">
-            </div>
-            <div id="topnav-add-item">
+			<div>
+				<img id="logo" src="img/logo-dungeon.png" class="logo" width="160px" alt="">
+			</div>
+			<div id="topnav-add-item">
 
-                <span id="addItemDungeon">
+				<span id="addItemDungeon">
 					<label for="addelement">Adicione Itens:</label>
 					<select id="addelement">
 
@@ -62,12 +62,13 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement() class="btn btn-small">
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
+						class="btn btn-small">
 				</span>
-                <span id="addItemMap">
+				<span id="addItemMap">
 					<label for="addTiles">Adicione Itens:</label>
 					<select id="addTiles">
-						
+
 						<option value="-1">Selecionar...</option>
 						<optgroup label="Terreno">
 							<option value="terrain-plane">Planície</option>
@@ -101,81 +102,90 @@
 						</optgroup>
 					</select>
 					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement() class="btn btn-small">
+					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
+						class="btn btn-small">
 				</span>
-            </div>
-            <div id="topnav-delete-item">
-                <span id="deleteDgElement">
+			</div>
+			<div id="topnav-delete-item">
+				<span id="deleteDgElement">
 					<label for="deleteelement">Excluir itens:</label>
 					<select id="deleteelement">
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement() class="btn btn-small">
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
+						class="btn btn-small">
 
 				</span>
-                <span id="deleteItemMap">
+				<span id="deleteItemMap">
 					<label for="deleteTiles">Excluir itens:</label>
 					<select id="deleteTiles">
 						<option value="-1">Selecionar...</option>
 					</select>
 					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement() class="btn btn-small" >
+					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
+						class="btn btn-small">
 				</span>
-            </div>
-            <div id="topnav-add-text">
-                <label for="addTextInput">Adicione Texto:</label>
-                <div>
-                    <input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
-                    <img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)" class="btn btn-small">
-                </div>
-            </div>
-            <div class="topbar-options">
-                <img id="btnUpload" src="img/icons/new/pic-upload.png" 	title="Upload de imagem" class="btn btn-big" onclick="openModalImagens()">
-                <img id="newMap" 	src="img/icons/new/map-plus.png" 	title="Novo mapa" class="btn btn-big"  onclick="redirect('index')">
-                <img id="newDung"	src="img/icons/new/map-plus.png" 	title="Novo mapa" class="btn btn-big"  onclick="redirect('index',false,true)">
-                <img id="changeMode" onclick="openModalConfirm()" title="Alternar de editor" class="btn btn-big">
-                <!-- <button id="modalBtn"></button> -->
-                <img src="img/icons/new/save.png" title="Salvar" class="btn btn-big" id="myBtn" onclick="openModalCarregar()">
-				<img src="img/icons/new/info.png" title="Sobre" class="btn btn-small" id="aboutBtn" onclick="openModalSobre()">
+			</div>
+			<div id="topnav-add-text">
+				<label for="addTextInput">Adicione Texto:</label>
+				<div>
+					<input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
+					<img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)"
+						class="btn btn-small">
+				</div>
+			</div>
+			<div class="topbar-options">
+				<img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" class="btn btn-big"
+					onclick="openModalImagens()">
+				<img id="newMap" src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big"
+					onclick="redirect('index')">
+				<img id="newDung" src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big"
+					onclick="redirect('index',false,true)">
+				<img id="changeMode" onclick="openModalConfirm()" title="Alternar de editor" class="btn btn-big">
+				<!-- <button id="modalBtn"></button> -->
+				<img src="img/icons/new/save.png" title="Salvar" class="btn btn-big" id="myBtn"
+					onclick="openModalCarregar()">
+				<img src="img/icons/new/info.png" title="Sobre" class="btn btn-small" id="aboutBtn"
+					onclick="openModalSobre()">
 
 
-            </div>
-            <div id="topnav-options-end">
-                <div id="d6" class="diceRoller dice1 btn btn-big-plus" onclick=rolld6()></div>
-                <div id="selectorBg" class="btn btn-big-plus bgSelector bgStyle1 " onclick="changeBg()"></div>
-            </div>
-        </div>
+			</div>
+			<div id="topnav-options-end">
+				<div id="d6" class="diceRoller dice1 btn btn-big-plus" onclick=rolld6()></div>
+				<div id="selectorBg" class="btn btn-big-plus bgSelector bgStyle1 " onclick="changeBg()"></div>
+			</div>
+		</div>
 
-        <div id="topo">
+		<div id="topo">
 
-            <div id="opcoes">
-
-
-
-            </div>
-        </div>
+			<div id="opcoes">
 
 
-       
 
-        <div id="uploadImageModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>
-                        <img src="img/icons/new/pic2.png">
-                        <p class="modal-title">Adicionar Imagens</p>
-                    </div>
-                    <img src="img/icons/new/cancel.png" id="closeUp" class="closeUp btn btn-big">
-                </div>
-                <div class="modal-body">
-                    <h5>
-                        Escolha o tipo de elemento que deseja adicionar e depois a imagem.
-                    </h5>
-                    <p>Para saber como preparar boas imagens para seu mapa clique <a href="#">aqui</a></p>
-                    <p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
-                    <select name="chooseClass" id="chooseClass">
+			</div>
+		</div>
+
+
+
+
+		<div id="uploadImageModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<div>
+						<img src="img/icons/new/pic2.png">
+						<p class="modal-title">Adicionar Imagens</p>
+					</div>
+					<img src="img/icons/new/cancel.png" id="closeUp" class="closeUp btn btn-big">
+				</div>
+				<div class="modal-body">
+					<h5>
+						Escolha o tipo de elemento que deseja adicionar e depois a imagem.
+					</h5>
+					<p>Para saber como preparar boas imagens para seu mapa clique <a href="#">aqui</a></p>
+					<p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
+					<select name="chooseClass" id="chooseClass">
 						<option id="chooseClass" value="-1">Selecionar...</option>
 						<option value="upCreature">Criatura</option>
 						<option value="upSmallItem">Item pequeno</option>
@@ -185,84 +195,90 @@
 						<option value="upVertCorridor">Corredor vertical</option>
 						<option value="upHorCorridor">Corredor horizontal</option>
 					</select>
-                    <select id="chooseClassMap" name="chooseClassMap">
+					<select id="chooseClassMap" name="chooseClassMap">
 						<option value="-1">Selecionar...</option>
 						<option value="terrain">Terreno</option>
 						<option value="squareShapeBig">Local</option>
 					</select>
-                    <input type="file" id="myfile" name="myfile" />
-                </div>
-            </div>
-        </div>
+					<input type="file" id="myfile" name="myfile" />
+				</div>
+			</div>
+		</div>
 
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>
-                        <img src="img/icons/new/save2.png">
-                        <p class="modal-title">Salvar/Restaurar Mapa</p>
-                    </div>
-                    <img src="img/icons/new/cancel.png" class="close btn btn-big">
-                </div>
-                <div class="modal-body">
-                    <div class="split-div">
-                        <div>
-                            <h1>Salvar no Navegador</h1>
-                            <p>Os mapas ficam salvos no navegador</p>
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<div>
+						<img src="img/icons/new/save2.png">
+						<p class="modal-title">Salvar/Restaurar Mapa</p>
+					</div>
+					<img src="img/icons/new/cancel.png" class="close btn btn-big">
+				</div>
+				<div class="modal-body">
+					<div class="split-div">
+						<div>
+							<h1>Salvar no Navegador</h1>
+							<p>Os mapas ficam salvos no navegador</p>
 
 
-                        </div>
-                        <div>
+						</div>
+						<div>
 
-                        </div>
+						</div>
 
-                    </div>
-                    <input type="text" placeholder="Nome do mapa" id="nomeMapa">
-                    <button onclick=saveMap() title="Salva no seu navegador para continuar a jogar depois">Salvar mapa
+					</div>
+					<input type="text" placeholder="Nome do mapa" id="nomeMapa">
+					<button onclick=saveMap() title="Salva no seu navegador para continuar a jogar depois">Salvar mapa
 					</button>
 
 
-                    <button onclick=salvarPosicao() title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">Exportar</button>
+					<button onclick=salvarPosicao()
+						title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">Exportar</button>
 
-                    <br><br>
-                    <select name="selectmap" id="selectmap">
+					<br><br>
+					<select name="selectmap" id="selectmap">
 						<option value="-1">Nenhum</option>
 					</select>
-                    <button onclick=loadMap() title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">Carregar
+					<button onclick=loadMap()
+						title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">Carregar
 						mapa</button>
-                    <button onclick=deleteMap() title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">Excluir
+					<button onclick=deleteMap()
+						title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">Excluir
 						mapa</button>
-                    <br><br>
-                    <input type="file" id="file-input" title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
-                    <label><button id="read-button" onclick=readMapFile()
+					<br><br>
+					<input type="file" id="file-input"
+						title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
+					<label><button id="read-button" onclick=readMapFile()
 							title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado">Importar
 							mapa</label></button>
-                    <span>
+					<span>
 						<br><br>
 						<p>Para saber o que cada botão faz posicione o mouse sobre o mesmo</p>
-						<p>Para dar sugestões clique <a href="https://forms.gle/3RiyBDhxwKSjqFsQ7" target="new">aqui</a></p>
+						<p>Para dar sugestões clique <a href="https://forms.gle/3RiyBDhxwKSjqFsQ7" target="new">aqui</a>
+						</p>
 						<p>Para vídeos de como usar a ferramenta clique <a
-								href="https://www.youtube.com/channel/UCQOr-yKxMMXAZa7hWXjw1NA/videos" target="new">aqui</a>
+								href="https://www.youtube.com/channel/UCQOr-yKxMMXAZa7hWXjw1NA/videos"
+								target="new">aqui</a>
 						</p>
 				</div>
 				<div class="modal-footer">
-					
+
 				</div>
-                
-                
+
+
 			</div>
-			
+
 
 		</div>
 
 		<!-- The Modal -->
-        <div id="mainModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
+		<div id="mainModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
 				<div class="close-div">
 					<img src="img/icons/new/cancel.png" class="close btn btn-big" onclick="closeMainModal()">
 				</div>
@@ -273,30 +289,30 @@
 							<img src="img/icons/new/info2.png">
 							<p class="modal-title">Sobre O criador de mundos</p>
 						</div>
-						
+
 					</div>
 					<div class="modal-body">
 						<div id="about-content">
 							<div>
-								<p>Criado por 
-									<a href="https://github.com/renanfranca93"  target="_blank">
+								<p>Criado por
+									<a href="https://github.com/renanfranca93" target="_blank">
 										RENAN FRANÇA
 									</a>
 								</p>
-								<p>Interface: 
-									<a href="https://github.com/ArnaldoAF"  target="_blank">
+								<p>Interface:
+									<a href="https://github.com/ArnaldoAF" target="_blank">
 										Arnaldo Assis Ferreira
 									</a>
 								</p>
-								<p>Ícones: 
-									<a href="https://game-icons.net/"  target="_blank">
+								<p>Ícones:
+									<a href="https://game-icons.net/" target="_blank">
 										game-icons.net
 									</a>
-									
+
 								</p>
-		
-								<p>Sugestões: 
-									<a href="mailto:jogadorcriativo@outlook.com"  target="_blank">
+
+								<p>Sugestões:
+									<a href="mailto:jogadorcriativo@outlook.com" target="_blank">
 										Link
 									</a>
 								</p>
@@ -306,11 +322,11 @@
 								<img id="logo" src="img/logo-dungeon.png" class="logo" alt="">
 							</div>
 						</div>
-						
-						
+
+
 					</div>
 					<div class="modal-footer">
-						
+
 					</div>
 				</div>
 				<div class="modal-variable" id="modalImagens">
@@ -352,7 +368,8 @@
 						</div>
 					</div>
 					<div class="modal-body">
-						<h4> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido salvo!
+						<h4> Alterar entre os editores fará com que o mapa atual seja perdido caso ainda não tenha sido
+							salvo!
 						</h4>
 						<h4>Prosseguir?</h4>
 					</div>
@@ -383,52 +400,67 @@
 							<div class="save-form">
 								<h1>Navegador</h1>
 								<p>Os mapas ficam salvos no navegador, mesmo depois de fechar</p>
-								<div>
+								<div class="form">
 									<input type="text" placeholder="Nome do mapa" id="nomeMapa">
-									<button class="btn btn-text btn-text-small " onclick=saveMap() title="Salva no seu navegador para continuar a jogar depois">Salvar mapa
+									<button class="btn btn-text btn-text-small " onclick=saveMap()
+										title="Salva no seu navegador para continuar a jogar depois">
+										<img src="img/icons/new/download-navegador.png">
+										Salvar mapa
 									</button>
 								</div>
-								<div>
+								<div class="form">
 									<select name="selectmap" id="selectmap">
 										<option value="-1">Nenhum</option>
 									</select>
-									<button class="btn btn-text btn-text-small " onclick=loadMap() title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">Carregar
-										mapa</button>
-									<button class="btn btn-text btn-text-small " onclick=deleteMap() title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">Excluir
-										mapa</button>
+									<button class="btn btn-text btn-text-small " onclick=loadMap()
+										title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">
+										<img src="img/icons/new/upload-navegador.png">
+										Carregar mapa
+									</button>
+									<button class="btn btn-text btn-text-small " onclick=deleteMap()
+										title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">
+										<img src="img/icons/new/delete-round.png">
+										Excluir mapa
+									</button>
 								</div>
 							</div>
 							<div>
 								<h1>Exportar</h1>
 								<p>Exporte/Importe os mapas em arquivos para usar em outros navegadores</p>
-								<div>
+								<div class="form">
 									<input type="text" placeholder="Nome do mapa" id="nomeMapa">
-									<button class="btn btn-text btn-text-small " onclick=salvarPosicao() title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">Exportar</button>
+									<button class="btn btn-text btn-text-small " onclick=salvarPosicao()
+										title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">
+										<img src="img/icons/new/download-file.png">
+										Exportar
+									</button>
 								</div>
-								<div>
-									<input type="file" id="file-input" title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
-									
+								<div class="form">
+									<input type="file" id="file-input"
+										title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
+
 									<button class="btn btn-text btn-text-small" id="read-button" onclick=readMapFile()
-									title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado">Importar
-									mapa
-								</button>
+										title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado">
+										<img src="img/icons/new/upload-file.png">
+										Importar mapa
+									</button>
 
 								</div>
 							</div>
 						</div>
-						
 
-							
+
+
 					</div>
 					<div class="modal-footer">
-						
+
 					</div>
-					
-					
+
+
 				</div>
-				
+
 			</div>
-			
+
 
 		</div>
 
@@ -437,7 +469,7 @@
 	<div id="conteudo">
 
 
-		
+
 		<!-- <div class="bgSelector bgSelector2 bgStyle2" onclick="changeBg(2)"></div>
   <div class="bgSelector bgSelector3 bgStyle3" onclick="changeBg(3)"></div>
   <div class="bgSelector bgSelector4 bgStyle4" onclick="changeBg(4)"></div> -->
