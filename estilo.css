@@ -110,6 +110,13 @@ input {
 }
 
 
+input {
+    height: 35px;
+    border-radius: 8px;
+    padding: 0 16px;
+    background: #fff;
+    border: 1px solid #a8a8b3;
+  }
 
 #conteudo {
     float: left;
