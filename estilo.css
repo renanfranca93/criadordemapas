@@ -123,33 +123,7 @@ select {
 input[type="file"] {
   display: none;
 }
-.custom-file-input::-webkit-file-upload-button {
-  visibility: hidden;
-}
-.custom-file-input::before {
-  content: "Select some files";
-  display: inline-block;
-  transition: filter 0.2s;
-  cursor: pointer;
-  border-radius: 8px;
-  -webkit-box-shadow: 4px 4px 0px 0px #000000;
-  box-shadow: 4px 4px 0px 0px #000000;
-  background: #473c38;
-  color: #ffdc9d;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  height: 2rem;
-  border-radius: 8px;
-  padding: 0.1rem;
-  width: 100%;
-}
-.custom-file-input:hover::before {
-  filter: brightness(0.8);
-}
-.custom-file-input:active::before {
-  filter: brightness(0.8);
-}
+
 
 .file-label {
     text-transform: uppercase;

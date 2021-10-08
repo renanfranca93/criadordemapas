@@ -121,6 +121,10 @@ function loadPage() {
         nameButton.setAttribute("title", "Alternar para o Criador de Dungeons");
     }
     counter();
+
+    // FileUpdate events
+    const fileInput = document.getElementById('file-input');
+    fileInput.onchange = () => readMapFile();
 }
 
 function redirect(page, modal, type) {
@@ -395,6 +399,7 @@ function dragElement(elmnt) {
 //FUNÇÃO PARA LER TXT
 
 function readMapFile() {
+    console.log("readMapFile");
     // document.querySelector("#read-button").addEventListener('click', function() {
     if (document.querySelector("#file-input").files.length == 0) {
         alert("Erro : Nenhum arquivo de dungeon selecionado");
