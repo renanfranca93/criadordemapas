@@ -40,11 +40,18 @@ function rolld6() {
     var random = Math.floor(Math.random() * 6) + 1;
 
     var d6 = document.getElementById("d6");
-    setTimeout(function() {
+    setTimeout(function () {
         d6.removeAttribute("class");
         d6.setAttribute("class", "diceRoller btn btn-big-plus dice" + random);
     }, 1000);
     d6.setAttribute("class", "diceRoller diceWhat shake btn btn-big-plus");
+}
+
+function addEvents() {
+    // Alguns eventos não podem ser aplicados Inline
+    // Por isso essa função adiciona eventos na manualmente
+    const fileInput = document.getElementById('file-input');
+    fileInput.onchange = () => readMapFile();
 }
 
 function loadPage() {
@@ -122,10 +129,10 @@ function loadPage() {
     }
     counter();
 
-    // FileUpdate events
-    const fileInput = document.getElementById('file-input');
-    fileInput.onchange = () => readMapFile();
+    addEvents();
 }
+
+
 
 function redirect(page, modal, type) {
     if (type) {
@@ -238,9 +245,11 @@ function deleteMapElement() {
 }
 
 function saveMap() {
+    console.log("saveMap()");
     var corpo = document.querySelector("#group").outerHTML;
     console.log(corpo);
     var nomeMapa = document.getElementById("nomeMapa").value;
+    console.log("nomeMapa");
     console.log(nomeMapa);
     if (typeOfSystem == "mp") {
         localStorage.setItem("world." + nomeMapa, JSON.stringify(corpo));
@@ -427,7 +436,7 @@ function readMapFile() {
     var reader = new FileReader();
 
     // file reading finished successfully
-    reader.addEventListener("load", function(e) {
+    reader.addEventListener("load", function (e) {
         // contents of file in variable
         var text = e.target.result;
 
@@ -513,9 +522,7 @@ var span = document.getElementsByClassName("close")[1];
 
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    console.log("windown click");
-    console.log(event.target);
+window.onclick = function (event) {
     if (event.target == mainModal) {
         closeMainModal();
     }
@@ -548,18 +555,18 @@ var spanUp = document.getElementById("closeUp");
 
 
 // When the user clicks on <span> (x), close the modal
-spanUp.onclick = function() {
+spanUp.onclick = function () {
     modalUp.style.display = "none";
 };
 
 
 
 var input = document.getElementById("myfile");
-input.onchange = function() {
+input.onchange = function () {
     var file = input.files[0],
         reader = new FileReader();
 
-    reader.onloadend = function() {
+    reader.onloadend = function () {
         var b64 = reader.result.replace(/^data:.+;base64,/, "");
         showImage(b64);
     };
