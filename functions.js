@@ -155,31 +155,22 @@ function openModal() {
 }
 
 function mountSelectMap() {
+    console.log("mountSelectMap()")
     var option = document.getElementById("selectmap");
 
     var bd = localStorage;
+    var bdList = Object.keys(bd).map((key) => [key, bd[key]]);
 
-    if (typeOfSystem == "mp") {
-        for (var map in bd) {
-            if (map.includes("world.")) {
-                var mapName = map.replace("world.", "");
-                var elemento = document.createElement("option");
-                elemento.value = mapName;
-                elemento.innerHTML = mapName;
-                option.appendChild(elemento);
-            }
-        }
-    } else {
-        for (var map in bd) {
-            if (map.includes("dungeon.")) {
-                var mapName = map.replace("dungeon.", "");
-                var elemento = document.createElement("option");
-                elemento.value = mapName;
-                elemento.innerHTML = mapName;
-                option.appendChild(elemento);
-            }
-        }
-    }
+    const wordType = typeOfSystem == "mp" ? "world." : "dungeon.";
+    const mapList = bdList.filter(x => x[0].includes(wordType));
+
+    mapList.forEach(map => {
+        var mapName = map[0].replace(wordType, "");
+        var elemento = document.createElement("option");
+        elemento.value = mapName;
+        elemento.innerHTML = mapName;
+        option.appendChild(elemento);
+    })
 }
 
 function addElement(text) {
@@ -275,6 +266,7 @@ function deleteMap() {
 }
 
 function mountaAllMapElements() {
+    console.log("mountaAllMapElements()");
     if (typeOfSystem == "mp") {
         var option = document.getElementById("deleteTiles");
     } else {
