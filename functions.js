@@ -54,6 +54,18 @@ function addEvents() {
     fileInput.onchange = () => readMapFile();
 }
 
+function getLocalStorageList() {
+    var bd = localStorage;
+    var bdList = Object.keys(bd).map((key) => [key, bd[key]]);
+
+    const wordType = typeOfSystem == "mp" ? "world." : "dungeon.";
+    const mapList = bdList.filter(x => x[0].includes(wordType));
+    const mapListFormated = mapList.map(x => [x[0].replace(wordType, ""), x[1]]);
+    console.log(mapListFormated);
+
+    return mapListFormated;
+}
+
 function loadPage() {
     var bg = localStorage.getItem("criadordemasmorrabg");
     if (!bg) {
@@ -158,14 +170,10 @@ function mountSelectMap() {
     console.log("mountSelectMap()")
     var option = document.getElementById("selectmap");
 
-    var bd = localStorage;
-    var bdList = Object.keys(bd).map((key) => [key, bd[key]]);
-
-    const wordType = typeOfSystem == "mp" ? "world." : "dungeon.";
-    const mapList = bdList.filter(x => x[0].includes(wordType));
+    const mapList = getLocalStorageList();
 
     mapList.forEach(map => {
-        var mapName = map[0].replace(wordType, "");
+        var mapName = map[0];
         var elemento = document.createElement("option");
         elemento.value = mapName;
         elemento.innerHTML = mapName;
@@ -237,19 +245,32 @@ function deleteMapElement() {
 
 function saveMap() {
     console.log("saveMap()");
-    var corpo = document.querySelector("#group").outerHTML;
+    var corpo = document.querySelector("#group")?.outerHTML;
     console.log(corpo);
-    var nomeMapa = document.getElementById("nomeMapa").value;
+    var nomeMapa = document.getElementById("nomeMapa").value.trim();
     console.log("nomeMapa");
     console.log(nomeMapa);
+
+    if(corpo === undefined) {
+        alert("Mapa está vazio!");
+        return; 
+    }
+
+    const mapList = getLocalStorageList().map(x => x[0]);
+
+    if(["", ...mapList].includes(nomeMapa.trim())) {
+        alert("Nome vazio/já existe!");
+        return; 
+    }
+
     if (typeOfSystem == "mp") {
         localStorage.setItem("world." + nomeMapa, JSON.stringify(corpo));
         closeMainModal();
-        redirect("index", true);
+        //redirect("index", true);
     } else {
         localStorage.setItem("dungeon." + nomeMapa, JSON.stringify(corpo));
         closeMainModal();
-        redirect("index", true, true);
+        //redirect("index", true, true);
     }
 }
 
