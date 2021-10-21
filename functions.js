@@ -169,6 +169,7 @@ function openModal() {
 function mountSelectMap() {
     console.log("mountSelectMap()")
     var option = document.getElementById("selectmap");
+    option.innerHTML = '';
 
     const mapList = getLocalStorageList();
 
@@ -245,7 +246,7 @@ function deleteMapElement() {
 
 function saveMap() {
     console.log("saveMap()");
-    var corpo = document.querySelector("#group")?.outerHTML;
+    var corpo = document?.querySelector("#group")?.outerHTML;
     console.log(corpo);
     var nomeMapa = document.getElementById("nomeMapa").value.trim();
     console.log("nomeMapa");
@@ -272,6 +273,8 @@ function saveMap() {
         closeMainModal();
         //redirect("index", true, true);
     }
+
+    mountSelectMap();
 }
 
 function deleteMap() {
