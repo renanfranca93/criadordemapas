@@ -170,6 +170,11 @@ function mountSelectMap() {
     console.log("mountSelectMap()")
     var option = document.getElementById("selectmap");
     option.innerHTML = '';
+    var elementoDefault = document.createElement("option");
+    elementoDefault.value = -1;
+    elementoDefault.innerHTML = "Nenhum";
+    elementoDefault.setAttribute("selected" , true);
+    option.appendChild(elementoDefault);
 
     const mapList = getLocalStorageList();
 
@@ -314,11 +319,11 @@ function mountaAllMapElements() {
 }
 
 function loadMap(map) {
-    if (!map) {
-        var option = document.getElementById("selectmap").value;
-    } else {
-        var option = map;
-    }
+    console.log("loadMap()");
+    console.log(map);
+
+    var option = map ? map : document.getElementById("selectmap").value;
+    
     var corpo = document.querySelector("#corpo");
     corpo.innerHTML = "";
     if (typeOfSystem == "mp") {
@@ -494,6 +499,8 @@ function closeMainModal() {
 }
 
 function closeAllModalContent() {
+    document.getElementById("nomeMapa").value = "";
+    document.getElementById("selectmap").selectedIndex = 0;
     modalSobre.style.display = "none";
     modalImagens.style.display = "none";
     modalConfirm.style.display = "none";
