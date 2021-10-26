@@ -284,14 +284,15 @@ function saveMap() {
 
 function deleteMap() {
     var nomeMapa = document.getElementById("selectmap").value;
-
-    if (typeOfSystem == "mp") {
-        localStorage.removeItem("world." + nomeMapa);
-        redirect("index", true);
-    } else {
-        localStorage.removeItem("dungeon." + nomeMapa);
-        redirect("index", true, true);
+    if(nomeMapa == -1) {
+        alert("Selecione um mapa!");
+        return; 
     }
+
+    var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
+    localStorage.removeItem(typeOfSystemLocal + nomeMapa);
+    mountSelectMap();
+
 }
 
 function mountaAllMapElements() {
@@ -323,21 +324,31 @@ function loadMap(map) {
     console.log(map);
 
     var option = map ? map : document.getElementById("selectmap").value;
+    console.log(option);
+    if(option == -1) {
+        alert("Selecione um mapa!");
+        return; 
+    }
     
     var corpo = document.querySelector("#corpo");
     corpo.innerHTML = "";
-    if (typeOfSystem == "mp") {
-        var posInicial = JSON.parse(localStorage.getItem("world." + option)) || "";
-    } else {
-        var posInicial =
-            JSON.parse(localStorage.getItem("dungeon." + option)) || "";
-    }
+
+    var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
+    var posInicial = JSON.parse(localStorage.getItem(typeOfSystemLocal + option)) || "";
+    console.log("posInicial");
+    console.log(posInicial);
 
     var frag = document.createRange().createContextualFragment(posInicial);
+    console.log("frag");
+    console.log(frag);
+
 
     corpo.appendChild(frag);
 
     var catchElement = posInicial.split("dgn99");
+    console.log("catchElement");
+    console.log(catchElement);
+
 
     for (i = catchElement.length; i > 0; i--) {
         if (i % 2 !== 0) {
