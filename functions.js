@@ -365,13 +365,23 @@ function loadMap(map) {
 }
 
 function salvarPosicao() {
+    console.log("salvarPosicao()")
     var saved = document.querySelector("#group");
+    var nomeMapa = document.getElementById("nomeMapaExportar").value.trim();
+    console.log(saved);
 
-    if (typeOfSystem == "mp") {
-        download("myworld.world", saved.outerHTML);
-    } else {
-        download("mydungeon.dungeon", saved.outerHTML);
+    if(!saved) {
+        alert("Mapa está vazio!");
+        return; 
     }
+
+    if(nomeMapa.trim() == "") {
+        alert("Nome vazio!");
+        return; 
+    }
+
+    var typeOfSystemLocal = typeOfSystem == "mp" ? ".world" : ".dungeon";
+    download(nomeMapa+typeOfSystemLocal, saved.outerHTML);
 }
 
 function download(filename, text) {
