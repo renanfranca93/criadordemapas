@@ -319,25 +319,10 @@ function mountaAllMapElements() {
     }
 }
 
-function loadMap(map) {
-    console.log("loadMap()");
-    console.log(map);
-
-    var option = map ? map : document.getElementById("selectmap").value;
-    console.log(option);
-    if(option == -1) {
-        alert("Selecione um mapa!");
-        return; 
-    }
-    
+function loadMapaBase(posInicial) {
     var corpo = document.querySelector("#corpo");
     corpo.innerHTML = "";
-
-    var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
-    var posInicial = JSON.parse(localStorage.getItem(typeOfSystemLocal + option)) || "";
-    console.log("posInicial");
-    console.log(posInicial);
-
+    
     var frag = document.createRange().createContextualFragment(posInicial);
     console.log("frag");
     console.log(frag);
@@ -362,6 +347,27 @@ function loadMap(map) {
     }
     closeMainModal();
     mountaAllMapElements();
+}
+
+function loadMap(map) {
+    console.log("loadMap()");
+    console.log(map);
+
+    var option = map ? map : document.getElementById("selectmap").value;
+    console.log(option);
+    if(option == -1) {
+        alert("Selecione um mapa!");
+        return; 
+    }
+    
+    
+
+    var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
+    var posInicial = JSON.parse(localStorage.getItem(typeOfSystemLocal + option)) || "";
+    console.log("posInicial");
+    console.log(posInicial);
+
+    loadMapaBase(posInicial);
 }
 
 function salvarPosicao() {
@@ -460,16 +466,10 @@ function readMapFile() {
     // first file selected by user
     var file = document.querySelector("#file-input").files[0];
 
-    if (typeOfSystem == "mp") {
-        if (file.name.search(".world") === -1) {
-            alert("Erro : Arquivo selecionado não é do tipo .world");
-            return;
-        }
-    } else {
-        if (file.name.search(".dungeon") === -1) {
-            alert("Erro : Arquivo selecionado não é do tipo .dungeon");
-            return;
-        }
+    var typeOfSystemLocal = typeOfSystem == "mp" ? ".world" : ".dungeon";
+    if (file.name.search(typeOfSystemLocal) === -1) {
+        alert("Erro : Arquivo selecionado não é do tipo " + typeOfSystemLocal);
+        return;
     }
 
     // perform validation on file type & size if required
@@ -490,11 +490,13 @@ function readMapFile() {
 
         if (typeOfSystem == "mp") {
             localStorage.setItem("world.Importado_" + name, JSON.stringify(text));
-            redirect("index", true);
+            // redirect("index", true);
         } else {
             localStorage.setItem("dungeon.Importado_" + name, JSON.stringify(text));
-            redirect("index", true, true);
+            // redirect("index", true, true);
         }
+
+        loadMapaBase(text);
     });
 
     // read as text file
