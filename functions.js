@@ -521,6 +521,7 @@ function closeMainModal() {
 
 function closeAllModalContent() {
     document.getElementById("nomeMapa").value = "";
+    document.getElementById("nomeMapaExportar").value = "";
     document.getElementById("selectmap").selectedIndex = 0;
     modalSobre.style.display = "none";
     modalImagens.style.display = "none";
