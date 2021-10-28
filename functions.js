@@ -40,11 +40,30 @@ function rolld6() {
     var random = Math.floor(Math.random() * 6) + 1;
 
     var d6 = document.getElementById("d6");
-    setTimeout(function() {
+    setTimeout(function () {
         d6.removeAttribute("class");
         d6.setAttribute("class", "diceRoller btn btn-big-plus dice" + random);
     }, 1000);
     d6.setAttribute("class", "diceRoller diceWhat shake btn btn-big-plus");
+}
+
+function addEvents() {
+    // Alguns eventos não podem ser aplicados Inline
+    // Por isso essa função adiciona eventos na manualmente
+    const fileInput = document.getElementById('file-input');
+    fileInput.onchange = () => readMapFile();
+}
+
+function getLocalStorageList() {
+    var bd = localStorage;
+    var bdList = Object.keys(bd).map((key) => [key, bd[key]]);
+
+    const wordType = typeOfSystem == "mp" ? "world." : "dungeon.";
+    const mapList = bdList.filter(x => x[0].includes(wordType));
+    const mapListFormated = mapList.map(x => [x[0].replace(wordType, ""), x[1]]);
+    console.log(mapListFormated);
+
+    return mapListFormated;
 }
 
 function loadPage() {
@@ -121,7 +140,11 @@ function loadPage() {
         nameButton.setAttribute("title", "Alternar para o Criador de Dungeons");
     }
     counter();
+
+    addEvents();
 }
+
+
 
 function redirect(page, modal, type) {
     if (type) {
@@ -144,31 +167,24 @@ function openModal() {
 }
 
 function mountSelectMap() {
+    console.log("mountSelectMap()")
     var option = document.getElementById("selectmap");
+    option.innerHTML = '';
+    var elementoDefault = document.createElement("option");
+    elementoDefault.value = -1;
+    elementoDefault.innerHTML = "Nenhum";
+    elementoDefault.setAttribute("selected" , true);
+    option.appendChild(elementoDefault);
 
-    var bd = localStorage;
+    const mapList = getLocalStorageList();
 
-    if (typeOfSystem == "mp") {
-        for (var map in bd) {
-            if (map.includes("world.")) {
-                var mapName = map.replace("world.", "");
-                var elemento = document.createElement("option");
-                elemento.value = mapName;
-                elemento.innerHTML = mapName;
-                option.appendChild(elemento);
-            }
-        }
-    } else {
-        for (var map in bd) {
-            if (map.includes("dungeon.")) {
-                var mapName = map.replace("dungeon.", "");
-                var elemento = document.createElement("option");
-                elemento.value = mapName;
-                elemento.innerHTML = mapName;
-                option.appendChild(elemento);
-            }
-        }
-    }
+    mapList.forEach(map => {
+        var mapName = map[0];
+        var elemento = document.createElement("option");
+        elemento.value = mapName;
+        elemento.innerHTML = mapName;
+        option.appendChild(elemento);
+    })
 }
 
 function addElement(text) {
@@ -234,34 +250,53 @@ function deleteMapElement() {
 }
 
 function saveMap() {
-    var corpo = document.querySelector("#group").outerHTML;
+    console.log("saveMap()");
+    var corpo = document?.querySelector("#group")?.outerHTML;
     console.log(corpo);
-    var nomeMapa = document.getElementById("nomeMapa").value;
+    var nomeMapa = document.getElementById("nomeMapa").value.trim();
+    console.log("nomeMapa");
     console.log(nomeMapa);
+
+    if(corpo === undefined) {
+        alert("Mapa está vazio!");
+        return; 
+    }
+
+    const mapList = getLocalStorageList().map(x => x[0]);
+
+    if(["", ...mapList].includes(nomeMapa.trim())) {
+        alert("Nome vazio/já existe!");
+        return; 
+    }
+
     if (typeOfSystem == "mp") {
         localStorage.setItem("world." + nomeMapa, JSON.stringify(corpo));
         closeMainModal();
-        redirect("index", true);
+        //redirect("index", true);
     } else {
         localStorage.setItem("dungeon." + nomeMapa, JSON.stringify(corpo));
         closeMainModal();
-        redirect("index", true, true);
+        //redirect("index", true, true);
     }
+
+    mountSelectMap();
 }
 
 function deleteMap() {
     var nomeMapa = document.getElementById("selectmap").value;
-
-    if (typeOfSystem == "mp") {
-        localStorage.removeItem("world." + nomeMapa);
-        redirect("index", true);
-    } else {
-        localStorage.removeItem("dungeon." + nomeMapa);
-        redirect("index", true, true);
+    if(nomeMapa == -1) {
+        alert("Selecione um mapa!");
+        return; 
     }
+
+    var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
+    localStorage.removeItem(typeOfSystemLocal + nomeMapa);
+    mountSelectMap();
+
 }
 
 function mountaAllMapElements() {
+    console.log("mountaAllMapElements()");
     if (typeOfSystem == "mp") {
         var option = document.getElementById("deleteTiles");
     } else {
@@ -284,26 +319,21 @@ function mountaAllMapElements() {
     }
 }
 
-function loadMap(map) {
-    if (!map) {
-        var option = document.getElementById("selectmap").value;
-    } else {
-        var option = map;
-    }
+function loadMapaBase(posInicial) {
     var corpo = document.querySelector("#corpo");
     corpo.innerHTML = "";
-    if (typeOfSystem == "mp") {
-        var posInicial = JSON.parse(localStorage.getItem("world." + option)) || "";
-    } else {
-        var posInicial =
-            JSON.parse(localStorage.getItem("dungeon." + option)) || "";
-    }
-
+    
     var frag = document.createRange().createContextualFragment(posInicial);
+    console.log("frag");
+    console.log(frag);
+
 
     corpo.appendChild(frag);
 
     var catchElement = posInicial.split("dgn99");
+    console.log("catchElement");
+    console.log(catchElement);
+
 
     for (i = catchElement.length; i > 0; i--) {
         if (i % 2 !== 0) {
@@ -319,14 +349,45 @@ function loadMap(map) {
     mountaAllMapElements();
 }
 
-function salvarPosicao() {
-    var saved = document.querySelector("#group");
+function loadMap(map) {
+    console.log("loadMap()");
+    console.log(map);
 
-    if (typeOfSystem == "mp") {
-        download("myworld.world", saved.outerHTML);
-    } else {
-        download("mydungeon.dungeon", saved.outerHTML);
+    var option = map ? map : document.getElementById("selectmap").value;
+    console.log(option);
+    if(option == -1) {
+        alert("Selecione um mapa!");
+        return; 
     }
+    
+    
+
+    var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
+    var posInicial = JSON.parse(localStorage.getItem(typeOfSystemLocal + option)) || "";
+    console.log("posInicial");
+    console.log(posInicial);
+
+    loadMapaBase(posInicial);
+}
+
+function salvarPosicao() {
+    console.log("salvarPosicao()")
+    var saved = document.querySelector("#group");
+    var nomeMapa = document.getElementById("nomeMapaExportar").value.trim();
+    console.log(saved);
+
+    if(!saved) {
+        alert("Mapa está vazio!");
+        return; 
+    }
+
+    if(nomeMapa.trim() == "") {
+        alert("Nome vazio!");
+        return; 
+    }
+
+    var typeOfSystemLocal = typeOfSystem == "mp" ? ".world" : ".dungeon";
+    download(nomeMapa+typeOfSystemLocal, saved.outerHTML);
 }
 
 function download(filename, text) {
@@ -395,6 +456,7 @@ function dragElement(elmnt) {
 //FUNÇÃO PARA LER TXT
 
 function readMapFile() {
+    console.log("readMapFile");
     // document.querySelector("#read-button").addEventListener('click', function() {
     if (document.querySelector("#file-input").files.length == 0) {
         alert("Erro : Nenhum arquivo de dungeon selecionado");
@@ -404,16 +466,10 @@ function readMapFile() {
     // first file selected by user
     var file = document.querySelector("#file-input").files[0];
 
-    if (typeOfSystem == "mp") {
-        if (file.name.search(".world") === -1) {
-            alert("Erro : Arquivo selecionado não é do tipo .world");
-            return;
-        }
-    } else {
-        if (file.name.search(".dungeon") === -1) {
-            alert("Erro : Arquivo selecionado não é do tipo .dungeon");
-            return;
-        }
+    var typeOfSystemLocal = typeOfSystem == "mp" ? ".world" : ".dungeon";
+    if (file.name.search(typeOfSystemLocal) === -1) {
+        alert("Erro : Arquivo selecionado não é do tipo " + typeOfSystemLocal);
+        return;
     }
 
     // perform validation on file type & size if required
@@ -422,7 +478,7 @@ function readMapFile() {
     var reader = new FileReader();
 
     // file reading finished successfully
-    reader.addEventListener("load", function(e) {
+    reader.addEventListener("load", function (e) {
         // contents of file in variable
         var text = e.target.result;
 
@@ -434,11 +490,13 @@ function readMapFile() {
 
         if (typeOfSystem == "mp") {
             localStorage.setItem("world.Importado_" + name, JSON.stringify(text));
-            redirect("index", true);
+            // redirect("index", true);
         } else {
             localStorage.setItem("dungeon.Importado_" + name, JSON.stringify(text));
-            redirect("index", true, true);
+            // redirect("index", true, true);
         }
+
+        loadMapaBase(text);
     });
 
     // read as text file
@@ -464,6 +522,9 @@ function closeMainModal() {
 }
 
 function closeAllModalContent() {
+    document.getElementById("nomeMapa").value = "";
+    document.getElementById("nomeMapaExportar").value = "";
+    document.getElementById("selectmap").selectedIndex = 0;
     modalSobre.style.display = "none";
     modalImagens.style.display = "none";
     modalConfirm.style.display = "none";
@@ -508,9 +569,7 @@ var span = document.getElementsByClassName("close")[1];
 
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    console.log("windown click");
-    console.log(event.target);
+window.onclick = function (event) {
     if (event.target == mainModal) {
         closeMainModal();
     }
@@ -543,18 +602,18 @@ var spanUp = document.getElementById("closeUp");
 
 
 // When the user clicks on <span> (x), close the modal
-spanUp.onclick = function() {
+spanUp.onclick = function () {
     modalUp.style.display = "none";
 };
 
 
 
 var input = document.getElementById("myfile");
-input.onchange = function() {
+input.onchange = function () {
     var file = input.files[0],
         reader = new FileReader();
 
-    reader.onloadend = function() {
+    reader.onloadend = function () {
         var b64 = reader.result.replace(/^data:.+;base64,/, "");
         showImage(b64);
     };
