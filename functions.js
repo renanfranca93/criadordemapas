@@ -99,6 +99,9 @@ function loadPage() {
     var screenType = url.search("type");
 
     var logoImg = document.getElementById("logo");
+
+    var imageSelectorDungeon = document.getElementById("chooseClass");
+    var imageSelectorMundo = document.getElementById("chooseClassMap");
     if (screenType !== -1) {
         //se for dungeon precisa do parametro type=dg
         typeOfSystem = "dg";
@@ -117,6 +120,9 @@ function loadPage() {
         var nameButton = document.getElementById("changeMode");
         nameButton.setAttribute("src", "img/icons/new/world.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Mundos");
+
+        imageSelectorMundo.setAttribute("class", "invisible");
+
         // nameButton.innerHTML = "Criador de Mundos";
     } else {
         //se não tiver o parametro type é do tipo criador de mundos
@@ -138,6 +144,7 @@ function loadPage() {
         // nameButton.innerHTML = "Criador de Masmorras";
         nameButton.setAttribute("src", "img/icons/new/dungeon.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Dungeons");
+        imageSelectorDungeon.setAttribute("class", "invisible");
     }
     counter();
 
