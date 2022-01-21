@@ -327,8 +327,8 @@
 						<p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
 
 						<div class="image-footer">
-							<div>
-								<select name="chooseClass" id="chooseClass">
+							<div id="chooseImageType">
+								<select name="chooseClass" id="chooseDungeonType" onchange="changeDungeonType()">
 									<option id="chooseClass" value="-1">Selecionar...</option>
 									<option value="upCreature">Criatura</option>
 									<option value="upSmallItem">Item pequeno</option>
@@ -338,11 +338,12 @@
 									<option value="upVertCorridor">Corredor vertical</option>
 									<option value="upHorCorridor">Corredor horizontal</option>
 								</select>
-								<select id="chooseClassMap" name="chooseClassMap">
+								<select id="chooseWorldType" name="chooseWorldType" onchange="changeWorldType()">
 									<option value="-1">Selecionar...</option>
 									<option value="terrain">Terreno</option>
 									<option value="squareShapeBig">Local</option>
 								</select>
+								<img id="imageModalPreview">
 
 							</div>
 							<div>

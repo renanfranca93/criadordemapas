@@ -100,8 +100,8 @@ function loadPage() {
 
     var logoImg = document.getElementById("logo");
 
-    var imageSelectorDungeon = document.getElementById("chooseClass");
-    var imageSelectorMundo = document.getElementById("chooseClassMap");
+    var imageSelectorDungeon = document.getElementById("chooseDungeonType");
+    var imageSelectorMundo = document.getElementById("chooseWorldType");
     if (screenType !== -1) {
         //se for dungeon precisa do parametro type=dg
         typeOfSystem = "dg";
@@ -672,6 +672,34 @@ function showImage(imgb64) {
     input.value = "";
     chooseClassElement.value = -1;
 }
+
+function changeDungeonType() {
+    var modal2 = document.getElementById("chooseDungeonType").value;
+}
+
+function changeWorldType() {
+    let worldType = document.getElementById("chooseWorldType").value;
+    let previewImg = document.getElementById("imageModalPreview");
+    let previewBackground = "";
+
+    console.log(worldType);
+    console.log(previewImg);
+    console.log(previewBackground);
+
+    switch(worldType) {
+        case "terrain": 
+            previewBackground = "img/templates/terreno.png";
+            break;
+        case "squareShapeBig": 
+            previewBackground = "img/templates/local.png";
+            break;
+    }
+
+    
+
+    previewImg.setAttribute("src", previewBackground);
+}
+
 
 loadPage();
 mountSelectMap();

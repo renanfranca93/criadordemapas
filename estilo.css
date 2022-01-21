@@ -308,3 +308,16 @@ input[type="file"] {
   background-color: #4caf50;
   color: white;
 } */
+
+
+#chooseImageType {
+  display: flex;
+  flex-direction: column;
+}
+
+#imageModalPreview {
+  background-color: purple;
+  margin-top: 1rem;
+  align-self: center;
+  max-width: 50%;
+}
