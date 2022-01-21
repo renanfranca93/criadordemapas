@@ -627,7 +627,7 @@ input.onchange = function () {
         console.log(b64);
         let previewImg = document.getElementById("imageModalPreview");
         previewImg.setAttribute("src", "data:image/jpeg;base64," + b64);
-        //previewImg.setAttribute("style", `background: center / contain no-repeat url('${reader.result}'); min-width: 50%; min-height: 50px`);
+        //previewImg.setAttribute("style", `background: center / contain no-repeat url('${reader.result}'); `);
         //previewImg.style.backgroundImage = "data:image/jpeg;base64," + b64;
     };
 

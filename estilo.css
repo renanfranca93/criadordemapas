@@ -319,5 +319,8 @@ input[type="file"] {
   margin-top: 1rem;
   align-self: center;
   max-width: 50%;
-  border: 3px solid white;
+}
+
+#myfileLabel {
+  margin-top: 2rem;
 }
