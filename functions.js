@@ -115,8 +115,8 @@ function loadPage() {
         sumirIten3.setAttribute("class", "invisible");
         var sumirIten4 = document.getElementById("newMap");
         sumirIten4.setAttribute("class", "invisible");
-        var sumirIten5 = document.getElementById("chooseClassMap");
-        sumirIten5.setAttribute("class", "invisible");
+        // var sumirIten5 = document.getElementById("chooseClassMap");
+        // sumirIten5.setAttribute("class", "invisible");
         var nameButton = document.getElementById("changeMode");
         nameButton.setAttribute("src", "img/icons/new/world.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Mundos");
@@ -144,6 +144,7 @@ function loadPage() {
         // nameButton.innerHTML = "Criador de Masmorras";
         nameButton.setAttribute("src", "img/icons/new/dungeon.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Dungeons");
+        
         imageSelectorDungeon.setAttribute("class", "invisible");
     }
     counter();
@@ -674,17 +675,42 @@ function showImage(imgb64) {
 }
 
 function changeDungeonType() {
-    var modal2 = document.getElementById("chooseDungeonType").value;
+    let dungeonType = document.getElementById("chooseDungeonType").value;
+    console.log(dungeonType);
+    let previewImg = document.getElementById("imageModalPreview");
+    let previewBackground = "";
+
+    switch(dungeonType) {
+        case "upCreature": 
+            previewBackground = "img/templates/criatura.png";
+            break;
+        case "upSmallItem": 
+            previewBackground = "img/templates/criatura.png";
+            break;
+        case "upMediumItem": 
+            previewBackground = "img/templates/criatura.png";
+            break;
+        case "upSmallRoom": 
+            previewBackground = "img/templates/sala-pequena.png";
+            break;
+        case "upBigRoom": 
+            previewBackground = "img/templates/sala-grande.png";
+            break;
+        case "upVertCorridor": 
+            previewBackground = "img/templates/corredor-vertical.png";
+            break;
+        case "upHorCorridor": 
+            previewBackground = "img/templates/corredor-horizontal.png";
+            break;
+    }
+
+    previewImg.setAttribute("src", previewBackground);
 }
 
 function changeWorldType() {
     let worldType = document.getElementById("chooseWorldType").value;
     let previewImg = document.getElementById("imageModalPreview");
     let previewBackground = "";
-
-    console.log(worldType);
-    console.log(previewImg);
-    console.log(previewBackground);
 
     switch(worldType) {
         case "terrain": 
@@ -694,8 +720,6 @@ function changeWorldType() {
             previewBackground = "img/templates/local.png";
             break;
     }
-
-    
 
     previewImg.setAttribute("src", previewBackground);
 }
