@@ -621,9 +621,14 @@ input.onchange = function () {
     var file = input.files[0],
         reader = new FileReader();
 
-    reader.onloadend = function () {
+    reader.onloadend = function (e) {
         var b64 = reader.result.replace(/^data:.+;base64,/, "");
-        showImage(b64);
+        //showImage(b64);
+        console.log(b64);
+        let previewImg = document.getElementById("imageModalPreview");
+        previewImg.setAttribute("src", "data:image/jpeg;base64," + b64);
+        //previewImg.setAttribute("style", `background: center / contain no-repeat url('${reader.result}'); min-width: 50%; min-height: 50px`);
+        //previewImg.style.backgroundImage = "data:image/jpeg;base64," + b64;
     };
 
     reader.readAsDataURL(file);
@@ -638,11 +643,11 @@ function showImage(imgb64) {
     }
     var local = document.querySelector("#group");
     if (typeOfSystem == "mp") {
-        var chooseClassElement = document.getElementById("chooseClassMap");
-        var classImg = document.getElementById("chooseClassMap").value;
+        var chooseClassElement = document.getElementById("chooseWorldType");
+        var classImg = document.getElementById("chooseWorldType").value;
     } else {
-        var chooseClassElement = document.getElementById("chooseClass");
-        var classImg = document.getElementById("chooseClass").value;
+        var chooseClassElement = document.getElementById("chooseDungeonType");
+        var classImg = document.getElementById("chooseDungeonType").value;
     }
 
     if (classImg == -1) {
@@ -704,7 +709,8 @@ function changeDungeonType() {
             break;
     }
 
-    previewImg.setAttribute("src", previewBackground);
+    //previewImg.setAttribute("src", previewBackground);
+    previewImg.setAttribute("class", "template-image " + dungeonType);
 }
 
 function changeWorldType() {
@@ -721,7 +727,10 @@ function changeWorldType() {
             break;
     }
 
-    previewImg.setAttribute("src", previewBackground);
+    // previewImg.setAttribute("style", `background: url('${previewBackground}')`);
+    // previewImg.setAttribute("src", previewBackground);
+    console.log(previewImg.className);
+    previewImg.setAttribute("class", "template-image " + worldType);
 }
 
 

@@ -316,8 +316,8 @@ input[type="file"] {
 }
 
 #imageModalPreview {
-  background-color: purple;
   margin-top: 1rem;
   align-self: center;
   max-width: 50%;
+  border: 3px solid white;
 }

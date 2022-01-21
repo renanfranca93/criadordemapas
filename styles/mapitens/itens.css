@@ -223,3 +223,10 @@
     border: 0px;
     cursor: move;
 }
+
+.template-image {
+    position: static !important;
+    z-index: 0 !important;
+    top: auto !important;
+    cursor: auto !important;
+}
