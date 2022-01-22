@@ -615,16 +615,15 @@ spanUp.onclick = function () {
 };
 
 
-
+var b64 = "";
 var input = document.getElementById("myfile");
 input.onchange = function () {
     var file = input.files[0],
         reader = new FileReader();
 
     reader.onloadend = function (e) {
-        var b64 = reader.result.replace(/^data:.+;base64,/, "");
+        b64 = reader.result.replace(/^data:.+;base64,/, "");
         //showImage(b64);
-        console.log(b64);
         let previewImg = document.getElementById("imageModalPreview");
         previewImg.setAttribute("src", "data:image/jpeg;base64," + b64);
         //previewImg.setAttribute("style", `background: center / contain no-repeat url('${reader.result}'); `);
@@ -634,7 +633,7 @@ input.onchange = function () {
     reader.readAsDataURL(file);
 };
 
-function showImage(imgb64) {
+function showImage() {
     if (!document.querySelector("#group")) {
         var corpo = document.querySelector("#corpo");
         var localCreation = document.createElement("div");
@@ -654,9 +653,13 @@ function showImage(imgb64) {
         alert("Escolha uma classe antes de escolher a imagem!");
         return;
     }
+    if (b64 == "") {
+        alert("Escolha uma imagem!");
+        return;
+    }
     var randonString = Math.random().toString(36).substring(2, 6);
     var img = document.createElement("img");
-    img.setAttribute("src", "data:image/jpeg;base64," + imgb64);
+    img.setAttribute("src", "data:image/jpeg;base64," + b64);
     img.setAttribute(
         "id",
         "dgn99img" + randonString + "-" + elementControl + "dgn99"
@@ -677,6 +680,11 @@ function showImage(imgb64) {
     var input = document.getElementById("myfile");
     input.value = "";
     chooseClassElement.value = -1;
+    b64 = "";
+    let previewImg = document.getElementById("imageModalPreview");
+    previewImg.removeAttribute("src");
+    previewImg.setAttribute("class", "template-image");
+    closeMainModal();
 }
 
 function changeDungeonType() {

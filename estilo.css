@@ -322,5 +322,10 @@ input[type="file"] {
 }
 
 #myfileLabel {
-  margin-top: 2rem;
+  margin: 2rem 0;
+}
+
+#addImage {
+  width: 100%;
+    margin-top: 1rem;
 }
