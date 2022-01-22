@@ -223,3 +223,14 @@
     border: 0px;
     cursor: move;
 }
+
+.template-image {
+    position: static !important;
+    z-index: 0 !important;
+    top: auto !important;
+    cursor: auto !important;
+}
+
+.template-image.terrain {
+    clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%);
+}

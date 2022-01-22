@@ -143,8 +143,11 @@
 #modalImagens .image-footer {
   display: flex;
   gap: 0.5rem;
+  flex-direction: column;
 }
 
 #modalImagens .image-footer div {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }

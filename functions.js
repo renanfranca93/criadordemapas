@@ -99,6 +99,9 @@ function loadPage() {
     var screenType = url.search("type");
 
     var logoImg = document.getElementById("logo");
+
+    var imageSelectorDungeon = document.getElementById("chooseDungeonType");
+    var imageSelectorMundo = document.getElementById("chooseWorldType");
     if (screenType !== -1) {
         //se for dungeon precisa do parametro type=dg
         typeOfSystem = "dg";
@@ -112,11 +115,14 @@ function loadPage() {
         sumirIten3.setAttribute("class", "invisible");
         var sumirIten4 = document.getElementById("newMap");
         sumirIten4.setAttribute("class", "invisible");
-        var sumirIten5 = document.getElementById("chooseClassMap");
-        sumirIten5.setAttribute("class", "invisible");
+        // var sumirIten5 = document.getElementById("chooseClassMap");
+        // sumirIten5.setAttribute("class", "invisible");
         var nameButton = document.getElementById("changeMode");
         nameButton.setAttribute("src", "img/icons/new/world.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Mundos");
+
+        imageSelectorMundo.setAttribute("class", "invisible");
+
         // nameButton.innerHTML = "Criador de Mundos";
     } else {
         //se não tiver o parametro type é do tipo criador de mundos
@@ -138,6 +144,8 @@ function loadPage() {
         // nameButton.innerHTML = "Criador de Masmorras";
         nameButton.setAttribute("src", "img/icons/new/dungeon.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Dungeons");
+        
+        imageSelectorDungeon.setAttribute("class", "invisible");
     }
     counter();
 
@@ -607,21 +615,25 @@ spanUp.onclick = function () {
 };
 
 
-
+var b64 = "";
 var input = document.getElementById("myfile");
 input.onchange = function () {
     var file = input.files[0],
         reader = new FileReader();
 
-    reader.onloadend = function () {
-        var b64 = reader.result.replace(/^data:.+;base64,/, "");
-        showImage(b64);
+    reader.onloadend = function (e) {
+        b64 = reader.result.replace(/^data:.+;base64,/, "");
+        //showImage(b64);
+        let previewImg = document.getElementById("imageModalPreview");
+        previewImg.setAttribute("src", "data:image/jpeg;base64," + b64);
+        //previewImg.setAttribute("style", `background: center / contain no-repeat url('${reader.result}'); `);
+        //previewImg.style.backgroundImage = "data:image/jpeg;base64," + b64;
     };
 
     reader.readAsDataURL(file);
 };
 
-function showImage(imgb64) {
+function showImage() {
     if (!document.querySelector("#group")) {
         var corpo = document.querySelector("#corpo");
         var localCreation = document.createElement("div");
@@ -630,20 +642,24 @@ function showImage(imgb64) {
     }
     var local = document.querySelector("#group");
     if (typeOfSystem == "mp") {
-        var chooseClassElement = document.getElementById("chooseClassMap");
-        var classImg = document.getElementById("chooseClassMap").value;
+        var chooseClassElement = document.getElementById("chooseWorldType");
+        var classImg = document.getElementById("chooseWorldType").value;
     } else {
-        var chooseClassElement = document.getElementById("chooseClass");
-        var classImg = document.getElementById("chooseClass").value;
+        var chooseClassElement = document.getElementById("chooseDungeonType");
+        var classImg = document.getElementById("chooseDungeonType").value;
     }
 
     if (classImg == -1) {
         alert("Escolha uma classe antes de escolher a imagem!");
         return;
     }
+    if (b64 == "") {
+        alert("Escolha uma imagem!");
+        return;
+    }
     var randonString = Math.random().toString(36).substring(2, 6);
     var img = document.createElement("img");
-    img.setAttribute("src", "data:image/jpeg;base64," + imgb64);
+    img.setAttribute("src", "data:image/jpeg;base64," + b64);
     img.setAttribute(
         "id",
         "dgn99img" + randonString + "-" + elementControl + "dgn99"
@@ -664,7 +680,67 @@ function showImage(imgb64) {
     var input = document.getElementById("myfile");
     input.value = "";
     chooseClassElement.value = -1;
+    b64 = "";
+    let previewImg = document.getElementById("imageModalPreview");
+    previewImg.removeAttribute("src");
+    previewImg.setAttribute("class", "template-image");
+    closeMainModal();
 }
+
+function changeDungeonType() {
+    let dungeonType = document.getElementById("chooseDungeonType").value;
+    console.log(dungeonType);
+    let previewImg = document.getElementById("imageModalPreview");
+    let previewBackground = "";
+
+    switch(dungeonType) {
+        case "upCreature": 
+            previewBackground = "img/templates/criatura.png";
+            break;
+        case "upSmallItem": 
+            previewBackground = "img/templates/criatura.png";
+            break;
+        case "upMediumItem": 
+            previewBackground = "img/templates/criatura.png";
+            break;
+        case "upSmallRoom": 
+            previewBackground = "img/templates/sala-pequena.png";
+            break;
+        case "upBigRoom": 
+            previewBackground = "img/templates/sala-grande.png";
+            break;
+        case "upVertCorridor": 
+            previewBackground = "img/templates/corredor-vertical.png";
+            break;
+        case "upHorCorridor": 
+            previewBackground = "img/templates/corredor-horizontal.png";
+            break;
+    }
+
+    //previewImg.setAttribute("src", previewBackground);
+    previewImg.setAttribute("class", "template-image " + dungeonType);
+}
+
+function changeWorldType() {
+    let worldType = document.getElementById("chooseWorldType").value;
+    let previewImg = document.getElementById("imageModalPreview");
+    let previewBackground = "";
+
+    switch(worldType) {
+        case "terrain": 
+            previewBackground = "img/templates/terreno.png";
+            break;
+        case "squareShapeBig": 
+            previewBackground = "img/templates/local.png";
+            break;
+    }
+
+    // previewImg.setAttribute("style", `background: url('${previewBackground}')`);
+    // previewImg.setAttribute("src", previewBackground);
+    console.log(previewImg.className);
+    previewImg.setAttribute("class", "template-image " + worldType);
+}
+
 
 loadPage();
 mountSelectMap();
