@@ -197,13 +197,13 @@ function mountSelectMap() {
     })
 }
 
-function addElement(text) {
+function addElement(elemento, text) {
     if (typeOfSystem == "mp") {
         var source = document.getElementById("addTiles").value;
     } else {
         var source = document.getElementById("addelement").value;
     }
-    var element = source.split("-");
+    var element = elemento?.split("-");
     if (!document.querySelector("#group")) {
         var corpo = document.querySelector("#corpo");
         var localCreation = document.createElement("div");
@@ -771,7 +771,7 @@ const selectWorld = [
             },
             {
                 nome: "Água",
-                value: "terrain-wate",
+                value: "terrain-water",
                 icon: `${iconsPrefix}/terreno/agua.png`
             },
             {
@@ -1042,7 +1042,7 @@ const getHeader = (grupo, content) => {
 
 const getCustomOption = ({ nome, value, icon }) => {
     return `
-      <span class="custom-option" data-value="${value}" onclick="itemClick('${value}')">
+      <span class="custom-option" data-value="${value}" onclick="addElement('${value}')">
         <img src="${icon}" title="${nome}"> 
       </span>
     `;
