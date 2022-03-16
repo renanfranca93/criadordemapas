@@ -744,147 +744,140 @@ function changeWorldType() {
 }
 
 // Custom Select
-
+const iconsPrefix = "./img/icons/new/menu-icons"
 var listaSelect = [
     {
-        grupo: "grupo1",
+        grupo: "Terreno",
         itens: [
             {
-                nome: "Dungeon",
-                value: "dungeon",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
+                nome: "Planície",
+                value: "terrain-plane",
+                icon: `${iconsPrefix}/terreno/planicie.png`
             },
             {
-                nome: "Imagem",
-                value: "image",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/pic-upload.png"
+                nome: "Floresta",
+                value: "terrain-forest",
+                icon: `${iconsPrefix}/terreno/floresta.png`
             },
             {
-                nome: "Mapa",
-                value: "map",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/map-plus.png"
+                nome: "Pântano",
+                value: "terrain-pant",
+                icon: `${iconsPrefix}/terreno/pantano.png`
             },
             {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+                nome: "Montanha",
+                value: "terrain-mountain",
+                icon: `${iconsPrefix}/terreno/montanha.png`
             },
             {
-                nome: "Informações",
-                value: "info",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/info.png"
+                nome: "Água",
+                value: "terrain-wate",
+                icon: `${iconsPrefix}/terreno/agua.png`
             },
             {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+                nome: "Deserto",
+                value: "terrain-desert",
+                icon: `${iconsPrefix}/terreno/deserto.png`
             },
             {
-                nome: "Adiconar",
-                value: "add",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/plus.png"
+                nome: "Gelo",
+                value: "terrain-ice",
+                icon: `${iconsPrefix}/terreno/gelo.png`
             },
-            {
-                nome: "Excluir",
-                value: "delete",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/delete.png"
-            },
-            {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
-            },
-            {
-                nome: "Dungeon",
-                value: "dungeon",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
-            },
-            {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
-            }
         ]
     },
     {
-        grupo: "grupo2",
+        grupo: "Token jogador",
         itens: [
             {
-                nome: "Dungeon",
-                value: "dungeon",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
+                nome: "Jogador 1",
+                value: "player-player1",
+                icon: `${iconsPrefix}/jogador/jogador 1.png`
             },
             {
-                nome: "Imagem",
-                value: "image",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/pic-upload.png"
+                nome: "Jogador 2",
+                value: "player-player2",
+                icon: `${iconsPrefix}/jogador/jogador 2.png`
             },
             {
-                nome: "Mapa",
-                value: "map",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/map-plus.png"
+                nome: "Jogador 3",
+                value: "player-player3",
+                icon: `${iconsPrefix}/jogador/jogador 3.png`
             },
             {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+                nome: "Jogador 4",
+                value: "player-player4",
+                icon: `${iconsPrefix}/jogador/jogador 4.png`
+            },
+        ]
+    },
+    {
+        grupo: "Locais",
+        itens: [
+            {
+                nome: "Entrada de Dungeon",
+                value: "squareShapeBig-dungeon_entrance",
+                icon: `${iconsPrefix}/locais/entrada-dungeon.png`
             },
             {
-                nome: "Informações",
-                value: "info",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/info.png"
+                nome: "Cidade 1",
+                value: "squareShapeBig-city1",
+                icon: `${iconsPrefix}/locais/cidades1.png`
             },
             {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+                nome: "Cidade 2",
+                value: "squareShapeBig-city2",
+                icon: `${iconsPrefix}/locais/cidades2.png`
             },
             {
-                nome: "Adiconar",
-                value: "add",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/plus.png"
+                nome: "Cidade 3",
+                value: "squareShapeBig-city3",
+                icon: `${iconsPrefix}/locais/cidades3.png`
             },
             {
-                nome: "Excluir",
-                value: "delete",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/delete.png"
+                nome: "Cidade 4",
+                value: "squareShapeBig-city4",
+                icon: `${iconsPrefix}/locais/cidades4.png`
             },
             {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+                nome: "Forte",
+                value: "squareShapeBig-fort",
+                icon: `${iconsPrefix}/locais/forte.png`
             },
             {
-                nome: "Dungeon",
-                value: "dungeon",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
+                nome: "Portal",
+                value: "squareShapeBig-portal",
+                icon: `${iconsPrefix}/locais/portal.png`
             },
             {
-                nome: "Salvar",
-                value: "save",
-                icon:
-                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+                nome: "Oasis",
+                value: "squareShapeBig-oasis",
+                icon: `${iconsPrefix}/locais/oasis.png`
+            },
+            {
+                nome: "Ruínas",
+                value: "squareShapeBig-ruins",
+                icon: `${iconsPrefix}/locais/ruinas.png`
+            },
+            {
+                nome: "Torre 1",
+                value: "squareShapeBig-tower1",
+                icon: `${iconsPrefix}/locais/torre1.png`
+            },
+            {
+                nome: "Torre 2",
+                value: "squareShapeBig-tower2",
+                icon: `${iconsPrefix}/locais/torre2.png`
+            },
+            {
+                nome: "Pedras",
+                value: "squareShapeBig-rocks",
+                icon: `${iconsPrefix}/locais/pedras.png`
+            },
+            {
+                nome: "Navio naufragado",
+                value: "squareShapeBig-ship",
+                icon: `${iconsPrefix}/locais/navio-naufragado.png`
             }
         ]
     }
@@ -919,9 +912,9 @@ function setupCustomSelect() {
     }
     window.addEventListener("click", function (e) {
         for (const select of document.querySelectorAll(".select")) {
-          if (!select.contains(e.target)) {
-            select.classList.remove("open");
-          }
+            if (!select.contains(e.target)) {
+                select.classList.remove("open");
+            }
         }
     });
 
@@ -936,7 +929,7 @@ function setupCustomSelect() {
         grupoContent += getHeader(grupo.grupo, optionContent);
     }
     document.querySelector("#select-itens").innerHTML = grupoContent;
-      
+
 }
 
 loadPage();
