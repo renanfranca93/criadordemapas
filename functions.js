@@ -66,6 +66,7 @@ function getLocalStorageList() {
     return mapListFormated;
 }
 
+
 function loadPage() {
     var bg = localStorage.getItem("criadordemasmorrabg");
     if (!bg) {
@@ -144,12 +145,13 @@ function loadPage() {
         // nameButton.innerHTML = "Criador de Masmorras";
         nameButton.setAttribute("src", "img/icons/new/dungeon.png");
         nameButton.setAttribute("title", "Alternar para o Criador de Dungeons");
-        
+
         imageSelectorDungeon.setAttribute("class", "invisible");
     }
     counter();
 
     addEvents();
+    setupCustomSelect();
 }
 
 
@@ -181,7 +183,7 @@ function mountSelectMap() {
     var elementoDefault = document.createElement("option");
     elementoDefault.value = -1;
     elementoDefault.innerHTML = "Nenhum";
-    elementoDefault.setAttribute("selected" , true);
+    elementoDefault.setAttribute("selected", true);
     option.appendChild(elementoDefault);
 
     const mapList = getLocalStorageList();
@@ -265,16 +267,16 @@ function saveMap() {
     console.log("nomeMapa");
     console.log(nomeMapa);
 
-    if(corpo === undefined) {
+    if (corpo === undefined) {
         alert("Mapa está vazio!");
-        return; 
+        return;
     }
 
     const mapList = getLocalStorageList().map(x => x[0]);
 
-    if(["", ...mapList].includes(nomeMapa.trim())) {
+    if (["", ...mapList].includes(nomeMapa.trim())) {
         alert("Nome vazio/já existe!");
-        return; 
+        return;
     }
 
     if (typeOfSystem == "mp") {
@@ -292,9 +294,9 @@ function saveMap() {
 
 function deleteMap() {
     var nomeMapa = document.getElementById("selectmap").value;
-    if(nomeMapa == -1) {
+    if (nomeMapa == -1) {
         alert("Selecione um mapa!");
-        return; 
+        return;
     }
 
     var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
@@ -330,7 +332,7 @@ function mountaAllMapElements() {
 function loadMapaBase(posInicial) {
     var corpo = document.querySelector("#corpo");
     corpo.innerHTML = "";
-    
+
     var frag = document.createRange().createContextualFragment(posInicial);
     console.log("frag");
     console.log(frag);
@@ -363,12 +365,12 @@ function loadMap(map) {
 
     var option = map ? map : document.getElementById("selectmap").value;
     console.log(option);
-    if(option == -1) {
+    if (option == -1) {
         alert("Selecione um mapa!");
-        return; 
+        return;
     }
-    
-    
+
+
 
     var typeOfSystemLocal = typeOfSystem == "mp" ? "world." : "dungeon.";
     var posInicial = JSON.parse(localStorage.getItem(typeOfSystemLocal + option)) || "";
@@ -384,18 +386,18 @@ function salvarPosicao() {
     var nomeMapa = document.getElementById("nomeMapaExportar").value.trim();
     console.log(saved);
 
-    if(!saved) {
+    if (!saved) {
         alert("Mapa está vazio!");
-        return; 
+        return;
     }
 
-    if(nomeMapa.trim() == "") {
+    if (nomeMapa.trim() == "") {
         alert("Nome vazio!");
-        return; 
+        return;
     }
 
     var typeOfSystemLocal = typeOfSystem == "mp" ? ".world" : ".dungeon";
-    download(nomeMapa+typeOfSystemLocal, saved.outerHTML);
+    download(nomeMapa + typeOfSystemLocal, saved.outerHTML);
 }
 
 function download(filename, text) {
@@ -693,26 +695,26 @@ function changeDungeonType() {
     let previewImg = document.getElementById("imageModalPreview");
     let previewBackground = "";
 
-    switch(dungeonType) {
-        case "upCreature": 
+    switch (dungeonType) {
+        case "upCreature":
             previewBackground = "img/templates/criatura.png";
             break;
-        case "upSmallItem": 
+        case "upSmallItem":
             previewBackground = "img/templates/criatura.png";
             break;
-        case "upMediumItem": 
+        case "upMediumItem":
             previewBackground = "img/templates/criatura.png";
             break;
-        case "upSmallRoom": 
+        case "upSmallRoom":
             previewBackground = "img/templates/sala-pequena.png";
             break;
-        case "upBigRoom": 
+        case "upBigRoom":
             previewBackground = "img/templates/sala-grande.png";
             break;
-        case "upVertCorridor": 
+        case "upVertCorridor":
             previewBackground = "img/templates/corredor-vertical.png";
             break;
-        case "upHorCorridor": 
+        case "upHorCorridor":
             previewBackground = "img/templates/corredor-horizontal.png";
             break;
     }
@@ -726,11 +728,11 @@ function changeWorldType() {
     let previewImg = document.getElementById("imageModalPreview");
     let previewBackground = "";
 
-    switch(worldType) {
-        case "terrain": 
+    switch (worldType) {
+        case "terrain":
             previewBackground = "img/templates/terreno.png";
             break;
-        case "squareShapeBig": 
+        case "squareShapeBig":
             previewBackground = "img/templates/local.png";
             break;
     }
@@ -741,6 +743,201 @@ function changeWorldType() {
     previewImg.setAttribute("class", "template-image " + worldType);
 }
 
+// Custom Select
+
+var listaSelect = [
+    {
+        grupo: "grupo1",
+        itens: [
+            {
+                nome: "Dungeon",
+                value: "dungeon",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
+            },
+            {
+                nome: "Imagem",
+                value: "image",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/pic-upload.png"
+            },
+            {
+                nome: "Mapa",
+                value: "map",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/map-plus.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            },
+            {
+                nome: "Informações",
+                value: "info",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/info.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            },
+            {
+                nome: "Adiconar",
+                value: "add",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/plus.png"
+            },
+            {
+                nome: "Excluir",
+                value: "delete",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/delete.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            },
+            {
+                nome: "Dungeon",
+                value: "dungeon",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            }
+        ]
+    },
+    {
+        grupo: "grupo2",
+        itens: [
+            {
+                nome: "Dungeon",
+                value: "dungeon",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
+            },
+            {
+                nome: "Imagem",
+                value: "image",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/pic-upload.png"
+            },
+            {
+                nome: "Mapa",
+                value: "map",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/map-plus.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            },
+            {
+                nome: "Informações",
+                value: "info",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/info.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            },
+            {
+                nome: "Adiconar",
+                value: "add",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/plus.png"
+            },
+            {
+                nome: "Excluir",
+                value: "delete",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/delete.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            },
+            {
+                nome: "Dungeon",
+                value: "dungeon",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/dungeon.png"
+            },
+            {
+                nome: "Salvar",
+                value: "save",
+                icon:
+                    "https://renanfranca93.github.io/criadordemapas/img/icons/new/save.png"
+            }
+        ]
+    }
+];
+
+const getHeader = (grupo, content) => {
+    return `
+      <span class="custom-option-header">${grupo}</span>
+      <div class="custom-options-content">
+        ${content}
+      </div>
+    `;
+};
+
+const getCustomOption = ({ nome, value, icon }) => {
+    return `
+      <span class="custom-option" data-value="${value}" onclick="itemClick('${value}')">
+        <img src="${icon}" title="${nome}"> 
+      </span>
+    `;
+};
+
+function setupCustomSelect() {
+    console.log("setupCustomSelect");
+    // Colocando o evento de fechar 
+    for (const dropdown of document.querySelectorAll(".select-trigger")) {
+        dropdown.addEventListener("click", function () {
+            this.parentNode.parentNode
+                .querySelector(".select")
+                .classList.toggle("open");
+        });
+    }
+    window.addEventListener("click", function (e) {
+        for (const select of document.querySelectorAll(".select")) {
+          if (!select.contains(e.target)) {
+            select.classList.remove("open");
+          }
+        }
+    });
+
+    // preencher o select
+    let grupoContent = "";
+    let optionContent = "";
+    for (const grupo of listaSelect) {
+        optionContent = "";
+        for (const item of grupo.itens) {
+            optionContent += getCustomOption(item);
+        }
+        grupoContent += getHeader(grupo.grupo, optionContent);
+    }
+    document.querySelector("#select-itens").innerHTML = grupoContent;
+      
+}
 
 loadPage();
 mountSelectMap();
