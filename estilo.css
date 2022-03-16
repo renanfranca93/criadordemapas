@@ -238,11 +238,11 @@ input[type="file"] {
 
 .topnav {
   background-color: #6b5a55;
-  overflow: hidden;
+  overflow: visible;
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 65px;
 }
 
 /* Style the links inside the navigation bar */
