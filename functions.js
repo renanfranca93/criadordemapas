@@ -745,7 +745,7 @@ function changeWorldType() {
 
 // Custom Select
 const iconsPrefix = "./img/icons/new/menu-icons"
-var listaSelect = [
+const selectWorld = [
     {
         grupo: "Terreno",
         itens: [
@@ -883,6 +883,154 @@ var listaSelect = [
     }
 ];
 
+const selectDungeon = [
+    {
+        grupo: "Cenário",
+        itens: [
+            {
+                nome: "Corredor Horizontal",
+                value: "room-corridorh",
+                icon: `${iconsPrefix}/cenarios/corredor-horizontal.png`
+            },
+            {
+                nome: "Corredor Vertical",
+                value: "room-corridorv",
+                icon: `${iconsPrefix}/cenarios/corredor-vertical.png`
+            },
+            {
+                nome: "Sala pequena",
+                value: "room-smallRoom",
+                icon: `${iconsPrefix}/cenarios/sala-pequena.png`
+            },
+            {
+                nome: "Sala grande",
+                value: "room-bigRoom",
+                icon: `${iconsPrefix}/cenarios/sala.png`
+            },
+            {
+                nome: "Escadaria",
+                value: "squareShapeMedium-stairs",
+                icon: `${iconsPrefix}/cenarios/escadas.png`
+            },
+            {
+                nome: "Tocha",
+                value: "itemMediumPortrait-torch",
+                icon: `${iconsPrefix}/cenarios/tocha.png`
+            },
+            {
+                nome: "Trono",
+                value: "itemMediumPortrait-trhone",
+                icon: `${iconsPrefix}/cenarios/trono.png`
+            },
+            {
+                nome: "Sangue",
+                value: "squareShapeMedium-blood",
+                icon: `${iconsPrefix}/cenarios/sangue.png`
+            },
+            {
+                nome: "Ossos",
+                value: "squareShapeMedium-bones",
+                icon: `${iconsPrefix}/cenarios/ossos.png`
+            }
+        ]
+    },
+    {
+        grupo: "Criaturas",
+        itens: [
+            {
+                nome: "Cavaleiro",
+                value: "creature-knight",
+                icon: `${iconsPrefix}/criaturas/cavaleiro.png`
+            },
+            {
+                nome: "Goblin",
+                value: "creature-goblin",
+                icon: `${iconsPrefix}/criaturas/goblin.png`
+            },
+            {
+                nome: "Lobo",
+                value: "creature-wolf",
+                icon: `${iconsPrefix}/criaturas/lobo.png`
+            },
+            {
+                nome: "Aranha",
+                value: "creature-spider",
+                icon: `${iconsPrefix}/criaturas/aranha.png`
+            },
+            {
+                nome: "Arqueiro",
+                value: "creature-archer",
+                icon: `${iconsPrefix}/criaturas/arqueiro.png`
+            },
+            {
+                nome: "Ladrão",
+                value: "creature-thief",
+                icon: `${iconsPrefix}/criaturas/ladrao.png`
+            },
+            {
+                nome: "Bárbaro",
+                value: "creature-barbarian",
+                icon: `${iconsPrefix}/criaturas/barbaro.png`
+            },
+            {
+                nome: "Esqueleto",
+                value: "creature-skeleton",
+                icon: `${iconsPrefix}/criaturas/esqueleto.png`
+            },
+            {
+                nome: "Guerreiro",
+                value: "creature-rogue",
+                icon: `${iconsPrefix}/criaturas/guerreiro.png`
+            },
+            {
+                nome: "Orc",
+                value: "creature-orc",
+                icon: `${iconsPrefix}/criaturas/orc.png`
+            },
+            {
+                nome: "Ogro",
+                value: "creature-ogre",
+                icon: `${iconsPrefix}/criaturas/ogro.png`
+            },
+            {
+                nome: "Dragão",
+                value: "creature-dragon",
+                icon: `${iconsPrefix}/criaturas/dragao.png`
+            }
+        ]
+    },
+    {
+        grupo: "Itens",
+        itens: [
+            {
+                nome: "Baú",
+                value: "itemSmall-chest",
+                icon: `${iconsPrefix}/itens/bau.png`
+            },
+            {
+                nome: "Chave",
+                value: "itemSmall-key",
+                icon: `${iconsPrefix}/itens/chave.png`
+            },
+            {
+                nome: "Fogueira",
+                value: "itemSmall-fire",
+                icon: `${iconsPrefix}/itens/fogueira.png`
+            },
+            {
+                nome: "Porta aberta",
+                value: "itemMediumPortrait-dooropen",
+                icon: `${iconsPrefix}/itens/porta-aberta.png`
+            },
+            {
+                nome: "Porta fechada",
+                value: "itemMediumPortrait-doorclosed",
+                icon: `${iconsPrefix}/itens/porta-fechada.png`
+            }
+        ]
+    }
+];
+
 const getHeader = (grupo, content) => {
     return `
       <span class="custom-option-header">${grupo}</span>
@@ -917,6 +1065,7 @@ function setupCustomSelect() {
             }
         }
     });
+    const listaSelect = typeOfSystem == "mp" ? selectWorld : selectDungeon;
 
     // preencher o select
     let grupoContent = "";
