@@ -108,8 +108,7 @@ function loadPage() {
         typeOfSystem = "dg";
         logoImg.removeAttribute("src");
         logoImg.setAttribute("src", "img/logo-dungeon.png");
-        var sumirIten1 = document.getElementById("addItemMap");
-        sumirIten1.setAttribute("class", "invisible");
+
         var sumirIten2 = document.getElementById("deleteItemMap");
         sumirIten2.setAttribute("class", "invisible");
         var sumirIten3 = document.getElementById("toDundGen");
@@ -131,8 +130,6 @@ function loadPage() {
         logoImg.removeAttribute("src");
         logoImg.setAttribute("src", "img/logo-map.png");
 
-        var sumirIten1 = document.getElementById("addItemDungeon");
-        sumirIten1.setAttribute("class", "invisible");
         var sumirIten2 = document.getElementById("deleteDgElement");
         sumirIten2.setAttribute("class", "invisible");
         var sumirIten3 = document.getElementById("toWorldGen");
@@ -198,11 +195,6 @@ function mountSelectMap() {
 }
 
 function addElement(elemento, text) {
-    if (typeOfSystem == "mp") {
-        var source = document.getElementById("addTiles").value;
-    } else {
-        var source = document.getElementById("addelement").value;
-    }
     var element = elemento?.split("-");
     if (!document.querySelector("#group")) {
         var corpo = document.querySelector("#corpo");

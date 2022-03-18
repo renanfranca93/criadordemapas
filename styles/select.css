@@ -57,6 +57,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+  z-index: 99;
 }
 
 .custom-option {

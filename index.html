@@ -21,90 +21,6 @@
 				<img id="logo" src="img/logo-dungeon.png" class="logo" width="160px" alt="">
 			</div>
 			<div id="topnav-add-item">
-
-				<span id="addItemDungeon">
-					<label for="addelement">Adicione Itens:</label>
-					<select id="addelement">
-
-						<option value="-1">Selecionar...</option>
-						<optgroup label="Cenário">
-							<option value="room-corridorh"> Corredor Hor.</option>
-							<option value="room-corridorv">Corredor Vert.</option>
-							<option value="room-smallRoom">Sala pequena</option>
-							<option value="room-bigRoom">Sala Grande</option>
-							<option value="squareShapeMedium-stairs">Escadaria</option>
-							<option value="itemMediumPortrait-torch">Tocha</option>
-							<option value="itemMediumPortrait-trhone">Trono</option>
-							<option value="squareShapeMedium-blood">Sangue</option>
-							<option value="squareShapeMedium-bones">Ossos</option>
-						</optgroup>
-						<optgroup label="Criaturas">
-							<option value="creature-knight">Cavaleiro</option>
-							<option value="creature-goblin">Goblin</option>
-							<option value="creature-wolf">Lobo</option>
-							<option value="creature-spider">Aranha</option>
-							<option value="creature-archer">Arqueiro</option>
-							<option value="creature-thief">Ladrão</option>
-							<option value="creature-barbarian">Bárbaro</option>
-							<option value="creature-skeleton">Esqueleto</option>
-							<option value="creature-rogue">Guerreiro</option>
-							<option value="creature-orc">Orc</option>
-							<option value="creature-ogre">Ogro</option>
-							<option value="creature-dragon">Dragão</option>
-						</optgroup>
-						<optgroup label="Itens">
-							<option value="itemSmall-chest">Baú</option>
-							<option value="itemSmall-key">Chave</option>
-							<option value="itemSmall-fire">Fogueira</option>
-							<option value="itemMediumPortrait-dooropen">Porta aberta</option>
-							<option value="itemMediumPortrait-doorclosed">Porta fechada</option>
-
-						</optgroup>
-					</select>
-					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
-						class="btn btn-small">
-				</span>
-				<span id="addItemMap">
-					<label for="addTiles">Adicione Itens:</label>
-					<select id="addTiles">
-
-						<option value="-1">Selecionar...</option>
-						<optgroup label="Terreno">
-							<option value="terrain-plane">Planície</option>
-							<option value="terrain-forest">Floresta</option>
-							<option value="terrain-pant">Pântano</option>
-							<option value="terrain-mountain">Montanha</option>
-							<option value="terrain-water">Água</option>
-							<option value="terrain-desert">Desert</option>
-							<option value="terrain-ice">Gelo</option>
-						</optgroup>
-						<optgroup label="Token jogador">
-							<option value="player-player1">Jogador 1</option>
-							<option value="player-player2">Jogador 2</option>
-							<option value="player-player3">Jogador 3</option>
-							<option value="player-player4">Jogador 4</option>
-						</optgroup>
-						<optgroup label="Locais">
-							<option value="squareShapeBig-dungeon_entrance">Entrada de dungeon</option>
-							<option value="squareShapeBig-city1">Cidade 1</option>
-							<option value="squareShapeBig-city2">Cidade 2</option>
-							<option value="squareShapeBig-city3">Cidade 3</option>
-							<option value="squareShapeBig-city4">Cidade 4</option>
-							<option value="squareShapeBig-fort">Forte</option>
-							<option value="squareShapeBig-portal">Portal</option>
-							<option value="squareShapeBig-oasis">Oasis</option>
-							<option value="squareShapeBig-ruins">Ruínas</option>
-							<option value="squareShapeBig-tower1">Torre 1</option>
-							<option value="squareShapeBig-tower2">Torre 2</option>
-							<option value="squareShapeBig-rocks">Pedras</option>
-							<option value="squareShapeBig-ship">Navio naufragado</option>
-						</optgroup>
-					</select>
-					<!-- <button onclick=addElement()>Adicionar</button> -->
-					<img title="Adicionar elemento selecionado" src="img/icons/new/plus.png" onclick=addElement()
-						class="btn btn-small">
-				</span>
 				<div class="select-wrapper">
 					<div class="select">
 					  <div class="select-trigger">
@@ -140,7 +56,7 @@
 				<label for="addTextInput">Adicione Texto:</label>
 				<div>
 					<input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
-					<img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(true)"
+					<img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(null, true)"
 						class="btn btn-small">
 				</div>
 			</div>
@@ -157,8 +73,6 @@
 					onclick="openModalCarregar()">
 				<img src="img/icons/new/info.png" title="Sobre" class="btn btn-small" id="aboutBtn"
 					onclick="openModalSobre()">
-
-
 			</div>
 			<div id="topnav-options-end">
 				<div id="d6" class="diceRoller dice1 btn btn-big-plus" onclick=rolld6()></div>
