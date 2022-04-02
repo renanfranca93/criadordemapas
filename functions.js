@@ -412,6 +412,8 @@ function download(filename, text) {
 //FUNÇÕES PARA TORNAR O ELEMENTO ARRASTÁVEL
 
 function dragElement(elmnt) {
+    console.log("dragElement");
+    console.log(elmnt);
     var pos1 = 0,
         pos2 = 0,
         pos3 = 0,
@@ -425,6 +427,9 @@ function dragElement(elmnt) {
     }
 
     function dragMouseDown(e) {
+        console.log("dragMouseDown");
+        console.log(numberStyle);
+        console.log(elmnt);
         e = e || window.event;
         e.preventDefault();
         // get the mouse cursor position at startup:
@@ -433,9 +438,13 @@ function dragElement(elmnt) {
         document.onmouseup = closeDragElement;
         // call a function whenever the cursor moves:
         document.onmousemove = elementDrag;
+        const moveTheme = [3,5].includes(numberStyle) ? "dark" : "light";
+        elmnt.classList.toggle(moveTheme);
+        elmnt.classList.toggle("moving");
     }
 
     function elementDrag(e) {
+        console.log("elementDrag");
         e = e || window.event;
         e.preventDefault();
         // calculate the new cursor position:
@@ -449,6 +458,11 @@ function dragElement(elmnt) {
     }
 
     function closeDragElement() {
+        console.log("closeDragElement");
+        const moveTheme = [3,5].includes(numberStyle) ? "dark" : "light";
+        elmnt.classList.remove("dark");
+        elmnt.classList.remove("light");
+        elmnt.classList.remove("moving");
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
         document.onmousemove = null;
@@ -652,15 +666,18 @@ function showImage() {
         return;
     }
     var randonString = Math.random().toString(36).substring(2, 6);
+    var divExterna = document.createElement("div");
     var img = document.createElement("img");
     img.setAttribute("src", "data:image/jpeg;base64," + b64);
-    img.setAttribute(
+    divExterna.setAttribute(
         "id",
         "dgn99img" + randonString + "-" + elementControl + "dgn99"
     );
-    img.setAttribute("title", "img" + elementControl);
+    divExterna.setAttribute("title", "img" + elementControl);
     img.setAttribute("class", classImg);
-    local.appendChild(img);
+    divExterna.setAttribute("class", classImg + " custom");
+    divExterna.appendChild(img);
+    local.appendChild(divExterna);
     dragElement(
         document.getElementById(
             "dgn99img" + randonString + "-" + elementControl + "dgn99"

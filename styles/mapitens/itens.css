@@ -231,6 +231,11 @@
     cursor: auto !important;
 }
 
-.template-image.terrain {
-    clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%);
+.template-image.terrain,
+.terrain.custom img {
+    clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0% 50%);
+}
+ss
+.terrain.custom img {
+    position: initial;
 }
