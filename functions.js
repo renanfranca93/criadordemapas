@@ -429,6 +429,7 @@ function dragElement(elmnt) {
     function dragMouseDown(e) {
         console.log("dragMouseDown");
         console.log(numberStyle);
+        console.log(elmnt);
         e = e || window.event;
         e.preventDefault();
         // get the mouse cursor position at startup:
@@ -665,15 +666,18 @@ function showImage() {
         return;
     }
     var randonString = Math.random().toString(36).substring(2, 6);
+    var divExterna = document.createElement("div");
     var img = document.createElement("img");
     img.setAttribute("src", "data:image/jpeg;base64," + b64);
-    img.setAttribute(
+    divExterna.setAttribute(
         "id",
         "dgn99img" + randonString + "-" + elementControl + "dgn99"
     );
-    img.setAttribute("title", "img" + elementControl);
+    divExterna.setAttribute("title", "img" + elementControl);
     img.setAttribute("class", classImg);
-    local.appendChild(img);
+    divExterna.setAttribute("class", classImg + " custom");
+    divExterna.appendChild(img);
+    local.appendChild(divExterna);
     dragElement(
         document.getElementById(
             "dgn99img" + randonString + "-" + elementControl + "dgn99"

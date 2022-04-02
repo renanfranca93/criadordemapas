@@ -65,9 +65,9 @@
 
 .moving.dark {
     -webkit-filter: drop-shadow( 0px 0px 8px #FFDC9D );
-    filter: drop-shadow( 0px 0px 8px #FFDC9D );
+    filter: drop-shadow( 0px 0px 30px #FFDC9D );
 }
 .moving.light {
     -webkit-filter: drop-shadow( 0px 0px 8px #473C38 );
-    filter: drop-shadow( 0px 0px 8px #473C38 );
+    filter: drop-shadow( 0px 0px 30px #473C38 );
 }
