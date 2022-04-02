@@ -10,7 +10,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%);
 }
 
 .plane {

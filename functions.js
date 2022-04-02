@@ -412,6 +412,8 @@ function download(filename, text) {
 //FUNÇÕES PARA TORNAR O ELEMENTO ARRASTÁVEL
 
 function dragElement(elmnt) {
+    console.log("dragElement");
+    console.log(elmnt);
     var pos1 = 0,
         pos2 = 0,
         pos3 = 0,
@@ -425,6 +427,8 @@ function dragElement(elmnt) {
     }
 
     function dragMouseDown(e) {
+        console.log("dragMouseDown");
+        console.log(numberStyle);
         e = e || window.event;
         e.preventDefault();
         // get the mouse cursor position at startup:
@@ -433,9 +437,13 @@ function dragElement(elmnt) {
         document.onmouseup = closeDragElement;
         // call a function whenever the cursor moves:
         document.onmousemove = elementDrag;
+        const moveTheme = [3,5].includes(numberStyle) ? "dark" : "light";
+        elmnt.classList.toggle(moveTheme);
+        elmnt.classList.toggle("moving");
     }
 
     function elementDrag(e) {
+        console.log("elementDrag");
         e = e || window.event;
         e.preventDefault();
         // calculate the new cursor position:
@@ -449,6 +457,11 @@ function dragElement(elmnt) {
     }
 
     function closeDragElement() {
+        console.log("closeDragElement");
+        const moveTheme = [3,5].includes(numberStyle) ? "dark" : "light";
+        elmnt.classList.remove("dark");
+        elmnt.classList.remove("light");
+        elmnt.classList.remove("moving");
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
         document.onmousemove = null;
