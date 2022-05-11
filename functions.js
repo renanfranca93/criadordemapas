@@ -149,6 +149,7 @@ function loadPage() {
 
     addEvents();
     setupCustomSelect();
+    setupDeleteContextMenu();
 }
 
 
@@ -235,6 +236,7 @@ function addElement(elemento, text) {
     allMapElements.push(element[1] + elementControl);
     mountaAllMapElements(allMapElements);
     elementControl++;
+    setupDeleteContextMenuList();
 }
 
 function deleteMapElement() {
@@ -1088,6 +1090,48 @@ function setupCustomSelect() {
     }
     document.querySelector("#select-itens").innerHTML = grupoContent;
 
+}
+
+// Delete contextMenu
+let deleteElementId = 0;
+var deleteContextMenu = document.getElementById("contextMenu")
+function setupDeleteContextMenu() {
+    document.onclick = hideMenu; 
+    setupDeleteContextMenuList();
+}
+
+function setupDeleteContextMenuList() {
+    console.log("setupDeleteContextMenuList");
+    let mapElementList = document.querySelectorAll("#group div");
+    console.log(mapElementList);
+    for(var x of mapElementList) {
+        x.oncontextmenu = rightClickDeleteMenu; 
+      }
+}
+
+function hideMenu() { 
+    deleteContextMenu.style.display = "none" 
+} 
+
+function rightClickDeleteMenu(e) { 
+    //console.log(e);
+    console.log("rightClickDeleteMenu");
+    console.log(e.target.attributes.id.value);
+    deleteElementId = e.target.attributes.id.value;
+    e.preventDefault(); 
+
+    if (deleteContextMenu.style.display == "block"){ 
+        hideMenu(); 
+    }else{      
+        deleteContextMenu.style.display = 'block'; 
+        deleteContextMenu.style.left = e.pageX + "px"; 
+        deleteContextMenu.style.top = e.pageY + "px"; 
+    } 
+} 
+
+function deleteElementeContext() {
+    var deletedElementeId = document.getElementById(deleteElementId);
+    deletedElementeId.remove();
 }
 
 loadPage();
