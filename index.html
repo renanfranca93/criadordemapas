@@ -23,46 +23,25 @@
 			<div id="topnav-add-item">
 				<div class="select-wrapper">
 					<div class="select">
-					  <div class="select-trigger">
-						<img src="img/icons/new/plus.png">
-					  </div>
-					  <div class="custom-options" id="select-itens">
-					  </div>
+						<div class="select-trigger">
+							<img src="img/icons/new/plus.png">
+						</div>
+						<div class="custom-options" id="select-itens">
+						</div>
 					</div>
-				  </div>
-			</div>
-			<div id="topnav-delete-item">
-				<span id="deleteDgElement">
-					<label for="deleteelement">Excluir itens:</label>
-					<select id="deleteelement">
-						<option value="-1">Selecionar...</option>
-					</select>
-					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
-						class="btn btn-small">
-
-				</span>
-				<span id="deleteItemMap">
-					<label for="deleteTiles">Excluir itens:</label>
-					<select id="deleteTiles">
-						<option value="-1">Selecionar...</option>
-					</select>
-					<!-- <button onclick=deleteMapElement()>Excluir</button> -->
-					<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick=deleteMapElement()
-						class="btn btn-small">
-				</span>
+				</div>
+				<img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" class="btn btn-big"
+					onclick="openModalImagens()">
 			</div>
 			<div id="topnav-add-text">
 				<label for="addTextInput">Adicione Texto:</label>
 				<div>
 					<input id="addTextInput" type="text" maxlength="14" size="15px" placeholder="Escreva aqui...">
-					<img title="Adicionar texto" src="img/icons/new/plus.png" id="addText" onclick="addElement(null, true)"
-						class="btn btn-small">
+					<img title="Adicionar texto" src="img/icons/new/plus.png" id="addText"
+						onclick="addElement(null, true)" class="btn btn-small">
 				</div>
 			</div>
 			<div class="topbar-options">
-				<img id="btnUpload" src="img/icons/new/pic-upload.png" title="Upload de imagem" class="btn btn-big"
-					onclick="openModalImagens()">
 				<img id="newMap" src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big"
 					onclick="redirect('index')">
 				<img id="newDung" src="img/icons/new/map-plus.png" title="Novo mapa" class="btn btn-big"
@@ -79,108 +58,6 @@
 				<div id="selectorBg" class="btn btn-big-plus bgSelector bgStyle1 " onclick="changeBg()"></div>
 			</div>
 		</div>
-
-		<div id="topo">
-
-			<div id="opcoes">
-
-
-
-			</div>
-		</div>
-
-		<div id="uploadImageModal" class="modal">
-			<!-- Modal content -->
-			<div class="modal-content">
-				<div class="modal-header">
-					<div>
-						<img src="img/icons/new/pic2.png">
-						<p class="modal-title">Adicionar Imagens</p>
-					</div>
-					<img src="img/icons/new/cancel.png" id="closeUp" class="closeUp btn btn-big">
-				</div>
-				<div class="modal-body">
-					<h5>
-						Escolha o tipo de elemento que deseja adicionar e depois a imagem.
-					</h5>
-					<p>Para saber como preparar boas imagens para seu mapa clique <a href="#">aqui</a></p>
-					<p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
-					
-				
-				</div>
-			</div>
-		</div>
-
-		<!-- The Modal -->
-		<div id="myModal" class="modal">
-
-			<!-- Modal content -->
-			<!-- 			
-			<div class="modal-content">
-				<div class="modal-header">
-					<div>
-						<img src="img/icons/new/save2.png">
-						<p class="modal-title">Salvar/Restaurar Mapa</p>
-					</div>
-					<img src="img/icons/new/cancel.png" class="close btn btn-big">
-				</div>
-				<div class="modal-body">
-					<div class="split-div">
-						<div>
-							<h1>Salvar no Navegador</h1>
-							<p>Os mapas ficam salvos no navegador</p>
-
-
-						</div>
-						<div>
-
-						</div>
-
-					</div>
-					<input type="text" placeholder="Nome do mapa" id="nomeMapa2">
-					<button onclick=saveMap() title="Salva no seu navegador para continuar a jogar depois">Salvar mapa
-					</button>
-
-
-					<button onclick=salvarPosicao()
-						title="Cria em seu computador um arquivo com sua dungeon que pode ser importado em qualquer computador">Exportar</button>
-
-					<br><br>
-					<!-- <select name="selectmap" id="selectmap">
-						<option value="-1">Nenhum</option>
-					</select> 
-					<button 
-						title="Após selecionar um mapa na caixa de seleção ao lado ele carregará um mapa salvo ou que já foi importado">Carregar
-						mapa</button>
-					<button onclick=deleteMap()
-						title="Após selecionar um mapa na caixa de seleção ao lado ele excluirá o mapa selecionado">Excluir
-						mapa</button>
-					<br><br>
-					<input type="file" id="file-input"
-						title="Clique nesse botão para selecionar um mapa que tenha sido Exportado" />
-					<label><button id="read-button" onclick=readMapFile()
-							title="Depois de Escolher o arquivo e clicar nesse botão o sistema irá salvar e carregar o mapa importado">Importar
-							mapa</label></button>
-					<span>
-						<br><br>
-						<p>Para saber o que cada botão faz posicione o mouse sobre o mesmo</p>
-						<p>Para dar sugestões clique <a href="https://forms.gle/3RiyBDhxwKSjqFsQ7" target="new">aqui</a>
-						</p>
-						<p>Para vídeos de como usar a ferramenta clique <a
-								href="https://www.youtube.com/channel/UCQOr-yKxMMXAZa7hWXjw1NA/videos"
-								target="new">aqui</a>
-						</p>
-				</div>
-				<div class="modal-footer">
-
-				</div>
-
-
-			</div> -->
-
-
-		</div>
-
 		<!-- The Main Modal -->
 		<div id="mainModal" class="modal">
 			<!-- Modal content -->
@@ -195,7 +72,6 @@
 							<img src="img/icons/new/info2.png">
 							<p class="modal-title">Sobre O criador de mundos</p>
 						</div>
-
 					</div>
 					<div class="modal-body">
 						<div id="about-content">
@@ -228,11 +104,8 @@
 								<img id="logo" src="img/logo-dungeon.png" class="logo" alt="">
 							</div>
 						</div>
-
-
 					</div>
 					<div class="modal-footer">
-
 					</div>
 				</div>
 				<div class="modal-variable" id="modalImagens">
@@ -246,11 +119,9 @@
 						<p>
 							Escolha o tipo de elemento que deseja adicionar e depois a imagem.
 						</p>
-						
 						<p>Para baixar os templates e criar suas imagens clique <a href="templates.zip">aqui</a></p>
-
 						<div class="image-footer">
-							<div >
+							<div>
 								<div id="chooseImageType">
 									<select name="chooseClass" id="chooseDungeonType" onchange="changeDungeonType()">
 										<option id="chooseClass" value="-1">Selecionar...</option>
@@ -262,7 +133,7 @@
 										<option value="upVertCorridor">Corredor vertical</option>
 										<option value="upHorCorridor">Corredor horizontal</option>
 									</select>
-									<select  name="chooseWorldType" id="chooseWorldType" onchange="changeWorldType()">
+									<select name="chooseWorldType" id="chooseWorldType" onchange="changeWorldType()">
 										<option value="-1">Selecionar...</option>
 										<option value="terrain">Terreno</option>
 										<option value="squareShapeBig">Local</option>
@@ -272,26 +143,18 @@
 										Carregar Imagem
 									</label>
 									<input type="file" id="myfile" name="myfile" />
-									
 								</div>
 								<div>
 									<img id="imageModalPreview" class="template-image">
 								</div>
-
 							</div>
 							<div>
-								<button class="btn btn-text " onclick=showImage()
-											title="Inserir Imagem"
-											id="addImage">
-											<img src="img/icons/new/plus.png">
-											Inserir Imagem
-									</button>
-
+								<button class="btn btn-text " onclick=showImage() title="Inserir Imagem" id="addImage">
+									<img src="img/icons/new/plus.png">
+									Inserir Imagem
+								</button>
 							</div>
-							
 						</div>
-						
-						
 					</div>
 				</div>
 				<div class="modal-variable" id="modalConfirm">
@@ -382,28 +245,18 @@
 								</div>
 							</div>
 						</div>
-
-
-
 					</div>
 					<div class="modal-footer">
-
 					</div>
-
-
 				</div>
-
 			</div>
-
-
 		</div>
-
 	</div>
 	</div>
-	<div id="contextMenu" class="context-menu" style="display: none"> 
+	<div id="contextMenu" class="context-menu" style="display: none">
 		<img title="Excluir elemento selecionado" src="img/icons/new/delete.png" onclick="deleteElementeContext(this)"
-						class="btn btn-small">
-    </div>
+			class="btn btn-big">
+	</div>
 	<div id="conteudo">
 
 

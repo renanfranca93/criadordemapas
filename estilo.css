@@ -260,6 +260,8 @@ input[type="file"] {
 
 .topbar-options {
   gap: 0.5rem;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 #topnav-add-item img,
@@ -269,10 +271,7 @@ input[type="file"] {
   vertical-align: middle;
 }
 
-#topnav-options-end {
-  flex: 1;
-  justify-content: flex-end;
-}
+
 
 .topnav span {
   text-align: left;
