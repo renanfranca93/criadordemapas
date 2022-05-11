@@ -31,3 +31,9 @@
 - add sombra quando se move item
 - bug quando o mapa carrega, pega a sombra errada
   - ex: o mapa ter background escuro; ao ínves de ter sombra clara pra contraste, carrega a sombra escura
+
+## 1.7.0
+- Criado botão de deletar flutuante
+- Deleção da opção de deletar na navbar
+- Mudança de ícones na navbar
+- Formatação do script
