@@ -1,8 +1,6 @@
 # Changelog
 
 ## Unreleased
-- Botão de deletar itens no mapa
-- Grid Hexagonal para terrenos
 - Bug fix do destaque quando se move
 
 ## 1.0.0
